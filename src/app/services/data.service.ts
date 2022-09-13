@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { lastValueFrom } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
+import { Account } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,23 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  async processData(){
-    const categories$ =  this.http.get(this.baseURL + 'accounts');
-    return await lastValueFrom(categories$);
+  // async processData(endPoint:string){
+  //   const categories$ =  this.http.get(this.baseURL + endPoint);
+  //   return await lastValueFrom(categories$);
+  // }
+
+  processData(endPoint:string){
+    const categories =  this.http.get<Account[]>(this.baseURL + endPoint);
+    return categories;
+  }
+
+  getData(endPoint:string){
+    return this.http.get<Account[]>(this.baseURL + endPoint);
+  }
+
+  public  get(endpoint: string){
+    return this.http.get<Account[]>(this.baseURL + endpoint);
+
   }
 
 }
