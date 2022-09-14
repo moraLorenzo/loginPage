@@ -4,6 +4,8 @@ import { firstValueFrom } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { Account } from '../../interfaces/index';
 
+import * as _ from 'lodash';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -37,9 +39,7 @@ export class HomeComponent implements OnInit {
 
       this.accounts = res;
 
-      let shareInfoLen = Object.keys(this.accounts[0]).length;
-
-      for (let i = 0; i < shareInfoLen; i++) {
+      for (let i = 0; i < _.keys(this.accounts).length; i++) {
         if (id == Number(this.accounts[i].id)) {
           this.avatar = this.accounts[i].avatar;
           this.email = this.accounts[i].email;
@@ -48,6 +48,9 @@ export class HomeComponent implements OnInit {
           break;
         }
       }
+
+      //toFix
+      // _.mapValues(this.accounts, function(o) { console.log(o); });
 
     });
   }
