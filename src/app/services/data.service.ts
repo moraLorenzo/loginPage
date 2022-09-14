@@ -3,19 +3,19 @@ import { Injectable } from '@angular/core';
 
 import { lastValueFrom, Observable } from 'rxjs';
 import { Account } from '../interfaces';
-
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private baseURL = 'https://631ed0fb58a1c0fe9f58a438.mockapi.io/test/v1/';
+
 
   constructor(private http: HttpClient) {
   }
 
   processData(endPoint:string){
-    const categories =  this.http.get<Account[]>(this.baseURL + endPoint);
+    const categories =  this.http.get<Account[]>(environment.baseURL + endPoint);
     return categories;
   }
 

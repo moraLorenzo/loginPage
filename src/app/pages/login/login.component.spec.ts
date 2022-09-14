@@ -28,40 +28,60 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Get All Accounts',()=>{
-    fixture = TestBed.createComponent(LoginComponent);
-    component = fixture.componentInstance;
+  // it('Get All Accounts',()=>{
+  //   fixture = TestBed.createComponent(LoginComponent);
+  //   component = fixture.componentInstance;
 
-    spyOn(component, 'getAccounts').and.callThrough();
-    const service = fixture.debugElement.injector.get(DataService);
+  //   spyOn(component, 'getAccounts').and.callThrough();
+  //   const service = fixture.debugElement.injector.get(DataService);
 
-    let accounts: Account[] = [{
-      "createdAt": "2022-09-11T08:44:28.995Z",
-      "name": "Esther Buckridge",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
-      "password": "RYQajunckDxKvnF",
-      "email": "Efrain_Lang@gmail.com",
-      "id": "1"
-    },
-    {
-      "createdAt": "2022-09-11T21:01:22.631Z",
-      "name": "Bruce Denesik",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/842.jpg",
-      "password": "CjVJlgeImU3h5Q8",
-      "email": "Orpha.Wunsch@hotmail.com",
-      "id": "2"
-    },
-    {
-      "createdAt": "2022-09-11T11:51:47.226Z",
-      "name": "Miss Virginia Boyer",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1179.jpg",
-      "password": "WNcsY7vXlAxbqJv",
-      "email": "Shaun_Von33@hotmail.com",
-      "id": "3"
-    },];
-    spyOn(service, 'processData').and.returnValue(of(accounts));
-    component.getAccounts();
-  });
+  //   let accounts: Account[] = [{
+  //     "createdAt": "2022-09-11T08:44:28.995Z",
+  //     "name": "Esther Buckridge",
+  //     "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
+  //     "password": "RYQajunckDxKvnF",
+  //     "email": "Efrain_Lang@gmail.com",
+  //     "id": "1"
+  //   },
+  //   {
+  //     "createdAt": "2022-09-11T21:01:22.631Z",
+  //     "name": "Bruce Denesik",
+  //     "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/842.jpg",
+  //     "password": "CjVJlgeImU3h5Q8",
+  //     "email": "Orpha.Wunsch@hotmail.com",
+  //     "id": "2"
+  //   },
+  //   {
+  //     "createdAt": "2022-09-11T11:51:47.226Z",
+  //     "name": "Miss Virginia Boyer",
+  //     "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1179.jpg",
+  //     "password": "WNcsY7vXlAxbqJv",
+  //     "email": "Shaun_Von33@hotmail.com",
+  //     "id": "3"
+  //   },];
+  //   spyOn(service, 'processData').and.returnValue(of(accounts));
+  //   component.getAccounts();
+  // });
+
+// it("Get all Accounts",() =>{
+//   fixture = TestBed.createComponent(LoginComponent);
+//   component = fixture.componentInstance;
+
+//   const service = fixture.debugElement.injector.get(DataService);
+
+
+//   spyOn(service, 'processData').and.returnValue(of )
+
+// })  
+
+it('Click AddMessages',()=>{
+  fixture = TestBed.createComponent(LoginComponent);
+  component = fixture.componentInstance;
+
+  spyOn(component, 'submit').and.callThrough();
+ 
+  component.addMessages();
+});
 
   it('Click AddMessages',()=>{
     fixture = TestBed.createComponent(LoginComponent);
