@@ -60,9 +60,8 @@ describe('HomeComponent', () => {
       "id": "3"
     },];
     spyOn(service, 'processData').and.returnValue(of(accounts));
-
-
-
+    component.getAccounts(1);
+    // expect(component.getAccounts).toEqual(accounts[0]);
   });
 
 });
