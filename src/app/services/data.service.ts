@@ -14,23 +14,18 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  // async processData(endPoint:string){
-  //   const categories$ =  this.http.get(this.baseURL + endPoint);
-  //   return await lastValueFrom(categories$);
-  // }
-
   processData(endPoint:string){
     const categories =  this.http.get<Account[]>(this.baseURL + endPoint);
     return categories;
   }
 
-  getData(endPoint:string){
-    return this.http.get<Account[]>(this.baseURL + endPoint);
-  }
+  // getData(endPoint:string){
+  //   return this.http.get<Account[]>(this.baseURL + endPoint);
+  // }
 
-  public  get(endpoint: string){
-    return this.http.get<Account[]>(this.baseURL + endpoint);
+  // public  get(endpoint: string){
+  //   return this.http.get<Account[]>(this.baseURL + endpoint);
 
-  }
+  // }
 
 }

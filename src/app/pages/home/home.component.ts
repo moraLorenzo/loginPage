@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { Account } from '../../interfaces/index';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
   email: string = '';
   createdAt: string = '';
   name: string = '';
+  
 
   accounts: Account[] = [];
 
@@ -25,14 +27,20 @@ export class HomeComponent implements OnInit {
       id = params['id'];
     });
 
-    await firstValueFrom(this._ds.get('accounts'))?.then((res: Account[]) => {
+    await this.getAccounts(id);
+
+  }
+
+
+  public async getAccounts(id: number) {
+    await firstValueFrom(this._ds.processData('accounts'))?.then((res: Account[]) => {
 
       this.accounts = res;
 
       let shareInfoLen = Object.keys(this.accounts[0]).length;
 
-      for(let i = 0; i < shareInfoLen; i++){
-        if(id == Number(this.accounts[i].id)){
+      for (let i = 0; i < shareInfoLen; i++) {
+        if (id == Number(this.accounts[i].id)) {
           this.avatar = this.accounts[i].avatar;
           this.email = this.accounts[i].email;
           this.createdAt = this.accounts[i].createdAt;
@@ -40,13 +48,12 @@ export class HomeComponent implements OnInit {
           break;
         }
       }
-  
-     }, err => {
-  
-      console.log(err)
-  
-     });
 
+    }, err => {
+
+      console.log(err);
+
+    });
   }
 
 }

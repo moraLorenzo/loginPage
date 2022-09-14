@@ -30,16 +30,16 @@ export class LoginComponent implements OnInit {
     })
 
     //receive the Accounts data for reference from MockAPI
-      await firstValueFrom(this._ds.processData('accounts'))?.then((res) => {
-        this.accounts = res
-       }, err => {
-        console.log(err)
+      await firstValueFrom(this._ds.processData('accounts'))?.then(res => {
+        this.accounts = res;
+       }, (err) => {
+        console.log(err);
        });
 
    
   }
 
-  callingFunction() {
+  submit() {
    //Get the number if JSON objects
     let shareInfoLen = Object.keys(this.accounts[0]).length;
 
