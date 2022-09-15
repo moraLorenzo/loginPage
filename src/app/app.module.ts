@@ -18,6 +18,9 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import { HomeComponent } from './pages/home/home.component';
 
+// import the GridModule for the Grid component
+import { GridModule, PagerModule, PageService, EditService, ToolbarService, SortService  } from '@syncfusion/ej2-angular-grids';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,18 +29,20 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   imports: [
     BrowserModule,
+    GridModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    PagerModule,
     InputTextModule,
     ButtonModule,
     MessagesModule,
     MessageModule,
     CardModule
   ],
-  providers: [],
+  providers: [EditService, ToolbarService, SortService, PageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

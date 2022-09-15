@@ -6,3 +6,13 @@
         <p>Created At: {{createdAt}}</p>       
     </p-card>
 </div>
+<br>
+<!-- <div>
+    <ejs-grid [dataSource]='accounts' [allowPaging]="true" [pageSettings]='pageSettings'> </ejs-grid>
+</div> -->
+
+<div class="control-section">
+    <ejs-grid [dataSource]='products' #batchgrid id='Batchgrid' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar'  (toolbarClick)='clickHandler($event)'>
+        </ejs-grid>
+
+</div>
