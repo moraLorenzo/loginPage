@@ -30,13 +30,17 @@ import { GridModule, PagerModule, PageService, EditService, ToolbarService, Sort
 // Ignite UI
 import { IgxActionStripModule, IgxGridModule, IgxFocusModule, IgxButtonModule, IgxIconModule, IgxInputGroupModule, IgxRippleModule, IgxChipsModule } from "igniteui-angular";
 import {IgxItemLegendModule, IgxPieChartModule, IgxLegendModule, IgxDataChartCoreModule, IgxDataChartCategoryCoreModule, IgxDataChartCategoryModule, IgxDataChartInteractivityModule, IgxDataChartVerticalCategoryModule, IgxDataChartAnnotationModule } from 'igniteui-angular-charts';
+import { ChartComponent } from './pages/chart/chart.component';
+import { GridTableComponent } from './pages/grid-table/grid-table.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ChartComponent,
+    GridTableComponent
   ],
   imports: [
     BrowserModule,

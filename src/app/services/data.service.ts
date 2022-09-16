@@ -8,6 +8,7 @@ import { Product } from '../interfaces/products';
 
 import { PageSettingsModel,EditSettingsModel, DataStateChangeEventArgs, DataSourceChangedEventArgs } from '@syncfusion/ej2-angular-grids';
 import { UserTable } from '../interfaces/users';
+import { Employee } from '../interfaces/employee';
 
 
 @Injectable({
@@ -27,6 +28,11 @@ export class DataService {
 
   getProduct(){
     const categories =  this.http.get<Product[]>(environment.baseURL + 'products');
+    return categories;
+  }
+
+  getEmployee(){
+    const categories =  this.http.get<Employee[]>(environment.baseURL + 'products');
     return categories;
   }
 
