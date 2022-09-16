@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DataService } from '../../services/data.service';
 
@@ -7,6 +7,8 @@ import { DataService } from '../../services/data.service';
 import { LoginComponent } from './login.component';
 import { Account } from '../../interfaces/index';
 import {of} from 'rxjs';
+import { IRenderer_$type } from 'igniteui-angular-core';
+import { Router } from '@angular/router';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -24,6 +26,7 @@ describe('LoginComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+  
 
   it('should create', () => {
     expect(component).toBeTruthy();
@@ -64,25 +67,14 @@ describe('LoginComponent', () => {
     component.getAccounts();
   });
 
-// it("Get all Accounts",() =>{
-//   fixture = TestBed.createComponent(LoginComponent);
-//   component = fixture.componentInstance;
+  it('Click AddMessages',()=>{
+    fixture = TestBed.createComponent(LoginComponent);
+    component = fixture.componentInstance;
 
-//   const service = fixture.debugElement.injector.get(DataService);
-
-
-//   spyOn(service, 'processData').and.returnValue(of )
-
-// })  
-
-it('Click AddMessages',()=>{
-  fixture = TestBed.createComponent(LoginComponent);
-  component = fixture.componentInstance;
-
-  spyOn(component, 'submit').and.callThrough();
- 
-  component.addMessages();
-});
+    spyOn(component, 'submit').and.callThrough();
+  
+    component.addMessages();
+  });
 
   it('Click AddMessages',()=>{
     fixture = TestBed.createComponent(LoginComponent);
@@ -92,5 +84,30 @@ it('Click AddMessages',()=>{
    
     component.addMessages();
   });
+
+  
+
+  //Should cover the submit button
+  it("should submit the form and check the inputs", ()=>{
+    fixture = TestBed.createComponent(LoginComponent);
+    component = fixture.componentInstance;
+
+    let filtered_array = [ {
+      "createdAt": "2022-09-11T08:44:28.995Z",
+      "name": "Esther Buckridge",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
+      "password": "12345678",
+      "email": "Efrain_Lang@gmail.com",
+      "id": "1"
+     }];
+
+    //  expect(submit.filtered_array).toEqual(filtered_array);
+
+    spyOn(component, 'submit').and.callThrough();
+   
+    component.submit();
+
+  });
+
 
 });

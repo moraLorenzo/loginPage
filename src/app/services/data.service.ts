@@ -32,12 +32,8 @@ export class DataService {
   }
 
   getEmployee(){
-    const categories =  this.http.get<Employee[]>(environment.baseURL + 'products');
+    const categories =  this.http.get<Employee[]>(environment.baseURL + 'employment_statistics');
     return categories;
-  }
-
-  addProduct(state: DataSourceChangedEventArgs){
-    return this.http.post<Product[]>(environment.baseURL + 'products', state.data);
   }
 
   public  getUsers(): Observable<UserTable[]>{

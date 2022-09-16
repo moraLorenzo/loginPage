@@ -8,11 +8,13 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test --code-coverage",
     "lint": "ng lint",
-    "installCypress": "ng add @cypress/schematic",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve"
+    "build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve",
+    "compodoc:build": "compodoc -p tsconfig.doc.json",
+    "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
+    "compodoc:serve": "compodoc -s"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,7 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@compodoc/compodoc": "^1.1.19",
     "@cypress/schematic": "^2.1.1",
     "@igniteui/material-icons-extended": "^2.10.0",
     "@syncfusion/ej2-angular-charts": "^20.2.49-ngcc",
@@ -66,6 +69,22 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "readme-md-generator": "^1.0.0",
     "typescript": "~4.7.2"
-  }
+  },
+  "description": "A sample login page that can navigate users to view their accounts and demonstrate piechart and data table visualization",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moraLorenzo/loginPage.git"
+  },
+  "keywords": [
+    "loginPage"
+  ],
+  "author": "Lorenzo Mora <lmora@intercardinc.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moraLorenzo/loginPage/issues"
+  },
+  "homepage": "https://github.com/moraLorenzo/loginPage#readme"
 }

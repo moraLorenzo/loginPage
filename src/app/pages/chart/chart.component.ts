@@ -4,6 +4,7 @@ import { EmitType } from '@syncfusion/ej2-base';
 import { firstValueFrom } from 'rxjs';
 import { Employee } from 'src/app/interfaces/employee';
 import { DataService } from 'src/app/services/data.service';
+import { Visible } from 'src/app/interfaces/products';
 
 @Component({
   selector: 'app-chart',
@@ -14,14 +15,14 @@ export class ChartComponent implements OnInit {
 
   
   public piedata!: Object[];
-  public legendSettings!: Object;
+  public legendSettings!: Visible;
 
   employee: Employee[] = [];
 
   constructor(private _detector: ChangeDetectorRef, private _ds: DataService) { }
 
-  async ngOnInit(): Promise<void> {
-    await this.getData();
+  ngOnInit() {
+    this.getData();
     // this.piedata = [
     //   { x: 'Jan', y: 3, text: 'Jan: 3' }, 
     //   { x: 'Feb', y: 3.5, text: 'Feb: 3.5' },
@@ -39,8 +40,6 @@ export class ChartComponent implements OnInit {
 
   async getData(): Promise<void> {
     await firstValueFrom(this._ds.getEmployee()).then((res: Employee[]) => (this.employee = res), console.error);
-
-    console.log(this.employee);
 
     this.piedata = this.employee;
   }

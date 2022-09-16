@@ -37,13 +37,12 @@ export class GridTableComponent implements OnInit {
 
   async getData(): Promise<void> {
     await firstValueFrom(this._ds.getUsers()).then((res: UserTable[]) => (this.usersTable = res), console.error);
-    console.log(this.usersTable);
-
     // console.log(this.usersTable);
   }
 
 
   async rowAdded(event: IRowDataEventArgs): Promise<void> {
+    // console.log(event.data);
     await firstValueFrom(this._ds.addUsers(event.data)).then((res: UserTable[]) => console.log, console.error);
   }
 
@@ -53,7 +52,6 @@ export class GridTableComponent implements OnInit {
   }
 
   public searchKeyDown(ev: KeyboardEvent): void {
-
     if (!_.indexOf(['Enter', 'ArrowDown', 'ArrowRight'], ev.key)) {
       ev.preventDefault();
       this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);

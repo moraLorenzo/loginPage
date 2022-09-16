@@ -10,3 +10,7 @@ export interface Product {
     country: string
     id: string
   }
+
+export interface Visible {
+  visible: boolean
+}
