@@ -75,8 +75,8 @@ export class GridTableComponent implements OnInit {
     await firstValueFrom(this._ds.deleteUsers(event.data.id)).then((res: UserTable[]) => console.log, console.error);
   }
 
-  async rowEditDone(event: IGridEditDoneEventArgs): Promise<void> {
-    await firstValueFrom(this._ds.putUsers(event.rowID, event.newValue)).then((res: UserTable[]) => this.getData(), console.error);
-  }
+  // async rowEditDone(event: IGridEditDoneEventArgs): Promise<void> {
+  //   await firstValueFrom(this._ds.putUsers(event.rowID, event.newValue)).then((res: UserTable[]) => this.getData(), console.error);
+  // }
 
 }

@@ -1,7 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { UserTable } from 'src/app/interfaces/users';
+import { of } from 'rxjs';
+import { Employee } from 'src/app/interfaces/employee';
 import { DataService } from 'src/app/services/data.service';
 
 import { GridTableComponent } from './grid-table.component';
@@ -43,8 +44,6 @@ describe('GridTableComponent', () => {
 
 //   expect(spy).toHaveBeenCalledWith();
 // })
-  
 
-  
 
 });
