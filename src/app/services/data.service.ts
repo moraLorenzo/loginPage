@@ -45,10 +45,10 @@ export class DataService {
     return this.http.post<UserTable[]>(environment.tagURL + 'getDataTable', userData)
   }
 
-    public putUsers(id: number, userData: UserTable[]): Observable<UserTable[]>{
-    return this.http.put<UserTable[]>(`${environment.tagURL}/getDataTable/${id}`, userData)
+  //   public putUsers(id: number, userData: UserTable[]): Observable<UserTable[]>{
+  //   return this.http.put<UserTable[]>(`${environment.tagURL}/getDataTable/${id}`, userData)
 
-  }
+  // }
 
   public deleteUsers(id: number): Observable<UserTable[]>{
     return this.http.delete<UserTable[]>(`${environment.tagURL}/getDataTable/${id}`)

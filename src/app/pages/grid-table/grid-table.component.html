@@ -9,8 +9,8 @@
                 </igx-prefix>
 
                 <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText"
-                    (ngModelChange)="grid.findNext(searchText, caseSensitive, exactMatch)"
-                    (keydown)="searchKeyDown($event)" />
+                    (ngModelChange)="grid.findNext(searchText, caseSensitive, exactMatch)"/>
+                    <!-- (keydown)="searchKeyDown($event)"  -->
 
                 <igx-suffix *ngIf="searchText.length > 0">
                     <div class="resultsText" *ngIf="grid.lastSearchInfo">

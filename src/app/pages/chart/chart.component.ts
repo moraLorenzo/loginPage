@@ -16,6 +16,7 @@ export class ChartComponent implements OnInit {
   
   public piedata!: Object[];
   public legendSettings!: Visible;
+  public datalabel!: Object;
 
   employee: Employee[] = [];
 
@@ -36,10 +37,13 @@ export class ChartComponent implements OnInit {
       this.legendSettings = {
         visible: true
       };
+
+      this.datalabel = { visible: true, name: 'text', position: 'Outside' };
   }
 
   async getData(): Promise<void> {
     await firstValueFrom(this._ds.getEmployee()).then((res: Employee[]) => (this.employee = res), console.error);
+    console.log(this.employee);
 
     this.piedata = this.employee;
   }

@@ -48,27 +48,27 @@ export class GridTableComponent implements OnInit {
 
   public clearSearch(): void {
     this.searchText = '';
-    this.grid.clearSearch();
+    // this.grid.clearSearch();
   }
 
-  public searchKeyDown(ev: KeyboardEvent): void {
-    if (!_.indexOf(['Enter', 'ArrowDown', 'ArrowRight'], ev.key)) {
-      ev.preventDefault();
-      this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
-    } else if (!_.indexOf(['ArrowUp', 'ArrowLeft'], ev.key)) {
-      ev.preventDefault();
-      this.grid.findPrev(this.searchText, this.caseSensitive, this.exactMatch);
-    }
-  }
+  // public searchKeyDown(ev: KeyboardEvent): void {
+  //   if (!_.indexOf(['Enter', 'ArrowDown', 'ArrowRight'], ev.key)) {
+  //     ev.preventDefault();
+  //     this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
+  //   } else if (!_.indexOf(['ArrowUp', 'ArrowLeft'], ev.key)) {
+  //     ev.preventDefault();
+  //     this.grid.findPrev(this.searchText, this.caseSensitive, this.exactMatch);
+  //   }
+  // }
 
   public updateSearch(): void {
     this.caseSensitive = !this.caseSensitive;
-    this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
+    // this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
   }
 
   public updateExactSearch(): void {
     this.exactMatch = !this.exactMatch;
-    this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
+    // this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
   }
 
   async rowDeleted(event: IRowDataEventArgs): Promise<void> {

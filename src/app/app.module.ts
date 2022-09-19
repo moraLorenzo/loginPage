@@ -23,6 +23,8 @@ import { AvatarModule } from 'primeng/avatar';
 
 //Syncfusion
 import { AccumulationChartModule } from '@syncfusion/ej2-angular-charts';
+import { PieSeriesService, AccumulationLegendService } from '@syncfusion/ej2-angular-charts';
+
 
 // import the GridModule for the Grid component
 import { GridModule, PagerModule, PageService, EditService, ToolbarService, SortService } from '@syncfusion/ej2-angular-grids';
@@ -76,7 +78,7 @@ import { GridTableComponent } from './pages/grid-table/grid-table.component';
     IgxDataChartAnnotationModule,
     IgxItemLegendModule, IgxPieChartModule
   ],
-  providers: [EditService, ToolbarService, SortService, PageService],
+  providers: [EditService, ToolbarService, SortService, PageService, PieSeriesService, AccumulationLegendService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
