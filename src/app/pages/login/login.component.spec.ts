@@ -83,28 +83,28 @@ describe('LoginComponent', () => {
     component.addMessages();
   });
 
-  // it("should check if email is valid",()=>{
-  //   fixture.detectChanges();
+  it("should check if email is valid",()=>{
+    fixture.detectChanges();
 
-  //   fixture.whenStable().then(()=>{
-  //       let email = component.loginForm.controls['email'];
-  //       expect(email.valid).toBeTruthy();
+    fixture.whenStable().then(()=>{
+        let email = component.loginForm.controls['email'];
+        expect(email.valid).toBeTruthy();
 
-  //       expect(email.touched).toBeFalse();
-  //       expect(email.errors).toBeTrue();
-  //   })
-  // });
+        expect(email.touched).toBeFalse();
+        expect(email.errors).toBeTrue();
+    })
+  });
 
-  // it("should check if password is valid",()=>{
-  //   fixture.detectChanges();
+  it("should check if password is valid",()=>{
+    fixture.detectChanges();
 
-  //   fixture.whenStable().then(()=>{
-  //       let password = component.loginForm.controls['password'];
+    fixture.whenStable().then(()=>{
+        let password = component.loginForm.controls['password'];
 
-  //       expect(password.touched).toBeFalse();
-  //       expect(password.errors).toBeTrue();
-  //   })
-  // });
+        expect(password.touched).toBeFalse();
+        expect(password.errors).toBeTrue();
+    })
+  });
 
   //Should cover the submit button
   it("should submit the form and check the inputs", ()=>{
@@ -119,7 +119,6 @@ describe('LoginComponent', () => {
      }];
 
     //  expect(submit.filtered_array).toEqual(filtered_array);
-
     spyOn(component, 'submit').and.callThrough();
    
     component.submit();
@@ -127,8 +126,5 @@ describe('LoginComponent', () => {
     component.filtered_array = filtered_array;
     expect(component.filtered_array).toBe(filtered_array);
   });
-
-
-
 
 });
