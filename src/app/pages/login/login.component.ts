@@ -50,20 +50,23 @@ export class LoginComponent implements OnInit {
       const { controls } = this.loginForm;
       this.filtered_array = _.filter(this.accounts, (o) =>
         (controls['email'].value === o.email && controls['password'].value === o.password));
-
-      if (_.isArray(this.filtered_array) && _.size(this.filtered_array)) {
-        this.addMessages();
-
-        this._rt.navigate(['nav/home/'+ 1]);
-      } else {
-        throw new Error("Account not found");
-
-      }
+      this.validate();
     } catch (error: any) {
       alert(error.Message);
     }
 
 
+  }
+
+  public validate() {
+    if (_.isArray(this.filtered_array) && _.size(this.filtered_array)) {
+      this.addMessages();
+
+      this._rt.navigate(['nav/home/' + 1]);
+    } else {
+      throw new Error("Account not found");
+
+    }
   }
 
   addMessages() {

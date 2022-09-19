@@ -36,6 +36,14 @@ describe('HomeComponent', () => {
     spyOn(component, 'getAccounts').and.callThrough();
     const service = fixture.debugElement.injector.get(DataService);
 
+    // let accounts: Account[] = [{
+    //   "createdAt": "2022-09-11T08:44:28.995Z",
+    //   "name": "Esther Buckridge",
+    //   "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
+    //   "password": "RYQajunckDxKvnF",
+    //   "email": "Efrain_Lang@gmail.com",
+    //   "id": "1"}];
+
     let accounts: Account[] = [{
       "createdAt": "2022-09-11T08:44:28.995Z",
       "name": "Esther Buckridge",
@@ -62,7 +70,6 @@ describe('HomeComponent', () => {
     },];
     spyOn(service, 'processData').and.returnValue(of(accounts));
     component.getAccounts(1);
-    // expect(component.getAccounts).toEqual(accounts[0]);
-  });
 
+  });
 });

@@ -16,7 +16,6 @@ import { Product } from 'src/app/interfaces/products';
 })
 export class HomeComponent implements OnInit {
 
-  avatar: string = '';
   email: string = '';
   createdAt: string = '';
   name: string = '';
@@ -48,7 +47,6 @@ export class HomeComponent implements OnInit {
   
         if (_.isArray(filtered_array) && _.size(filtered_array)) {
           this.name = filtered_array[0]['name'];
-          this.avatar = filtered_array[0]['avatar'];
           this.createdAt = filtered_array[0]['createdAt'];
           this.email = filtered_array[0]['email'];
         } else {

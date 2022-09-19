@@ -41,8 +41,8 @@ export class GridTableComponent implements OnInit {
   }
 
 
-  async rowAdded(event: IRowDataEventArgs): Promise<void> {
-    // console.log(event.data);
+  async rowAdded(event: any): Promise<void> {
+    console.log(event.data);
     await firstValueFrom(this._ds.addUsers(event.data)).then((res: UserTable[]) => console.log, console.error);
   }
 
@@ -71,8 +71,9 @@ export class GridTableComponent implements OnInit {
     // this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
   }
 
-  async rowDeleted(event: IRowDataEventArgs): Promise<void> {
-    await firstValueFrom(this._ds.deleteUsers(event.data.id)).then((res: UserTable[]) => console.log, console.error);
+  async rowDeleted(event: any): Promise<void> {
+    await firstValueFrom(this._ds.deleteUsers(event.data.id)).then((res: UserTable[]) => console.log(res), console.error);
+    // console.log(res);
   }
 
   // async rowEditDone(event: IGridEditDoneEventArgs): Promise<void> {
