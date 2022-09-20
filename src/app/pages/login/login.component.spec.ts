@@ -40,9 +40,26 @@ describe('LoginComponent', () => {
     spyOn(component, 'getAccounts').and.callThrough();
     const service = fixture.debugElement.injector.get(DataService);
 
-    let accounts: any = ["sample"];
+    let accounts: Account[] = [{
+      "createdAt": "2022-09-11T08:44:28.995Z",
+      "name": "Esther Buckridge",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
+      "password": "RYQajunckDxKvnF",
+      "email": "Efrain_Lang@gmail.com",
+      "id": "1"
+    },
+    {
+      "createdAt": "2022-09-11T21:01:22.631Z",
+      "name": "Bruce Denesik",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/842.jpg",
+      "password": "CjVJlgeImU3h5Q8",
+      "email": "Orpha.Wunsch@hotmail.com",
+      "id": "2"
+    }];
+
     spyOn(service, 'processData').and.returnValue(of(accounts));
     component.getAccounts();
+    expect(component.accounts).toEqual(accounts);
   });
 
   it('Click AddMessages',()=>{
@@ -134,14 +151,17 @@ describe('LoginComponent', () => {
 
     component.filtered_array = filtered_array;
     // component.filtered_array.length = 1;
-  
-    // expect(component.filtered_array.length).toBeGreaterThan(0);
+
     expect(component.filtered_array).toEqual(filtered_array);
     expect(component.filtered_array.length).toBeGreaterThan(0);
+
     
     // console.log(component.filtered_array.length);
     // expect(component.filtered_array).toBe();
 
+    // if(component.filtered_array.length > 0){
+    //   expect(navSpy).toHaveBeenCalledWith(['nav/home/' + filtered_array[0].id]);
+    // }
   });
 
 

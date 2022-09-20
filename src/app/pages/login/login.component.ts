@@ -52,12 +52,12 @@ export class LoginComponent implements OnInit {
 
         console.log(this.filtered_array);
 
-      if (_.isArray(this.filtered_array)) {
+      if (_.isArray(this.filtered_array) && _.size(this.filtered_array)) {
        
           
         this.addMessages();
 
-        this._rt.navigate(['nav/home/'+ 1]);
+        this._rt.navigate(['nav/home/'+ this.filtered_array[0].id]);
       } 
       else {
         throw new Error("Account not found");
