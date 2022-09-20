@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   accounts: Account[] = [];
   msgs: Message[] = [];
 
-  filtered_array: Account[] = [];
+  filtered_array: any = [];
 
   constructor(private _ds: DataService, private _fb: FormBuilder, private _rt: Router) { }
 
@@ -47,22 +47,25 @@ export class LoginComponent implements OnInit {
 
   submit() {
     try {
-      const { controls } = this.loginForm;
-      this.filtered_array = _.filter(this.accounts, (o) =>
-        (controls['email'].value === o.email && controls['password'].value === o.password));
+      const { email, password } = this.loginForm.value;
+      this.filtered_array = _.filter(this.accounts, {"email": email, "password": password});
 
-      if (_.isArray(this.filtered_array) && _.size(this.filtered_array)) {
+        console.log(this.filtered_array);
+
+      if (_.isArray(this.filtered_array)) {
+       
+          
         this.addMessages();
 
         this._rt.navigate(['nav/home/'+ 1]);
-      } else {
+      } 
+      else {
         throw new Error("Account not found");
-
       }
-    } catch (error: any) {
-      alert(error.Message);
+    } 
+    catch (error: any) {
+      alert(error.message);
     }
-
 
   }
 
