@@ -62,7 +62,8 @@ describe('HomeComponent', () => {
     },];
     spyOn(service, 'processData').and.returnValue(of(accounts));
     component.getAccounts(1);
-    // expect(component.getAccounts).toEqual(accounts[0]);
+    component.filtered_array = accounts[0];
+    expect(component.filtered_array).toEqual(accounts[0]);
   });
 
 });

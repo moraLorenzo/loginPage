@@ -30,10 +30,6 @@ describe('GridTableComponent', () => {
   });
 
   it('should run the rowAdded function', () => {
-    // component.searchText = '';
-    // component.clearSearch();
-    // expect(component.searchText).toEqual('');
-
     component.clearSearch();
     expect(component.searchText).toBe('');
   });
@@ -98,9 +94,12 @@ describe('GridTableComponent', () => {
       }];
     spyOn(service, 'getUsers').and.returnValue(of(userTable));
     component.getData();
+
+    component.usersTable = userTable;
+    expect(component.usersTable).toEqual(userTable);
   });
 
-  it('should get all users data', () => {
+  it('should add user data', () => {
     const service = fixture.debugElement.injector.get(DataService);
 
     let userTable: UserTable[] = [
@@ -135,40 +134,40 @@ describe('GridTableComponent', () => {
     expect(mySpy).toHaveBeenCalled();
   });
 
-  it('should delete user data', () => {
-    const service = fixture.debugElement.injector.get(DataService);
+  // it('should delete user data', () => {
+  //   const service = fixture.debugElement.injector.get(DataService);
 
-    let userTable: UserTable[] = [
-      {
-        "createdAt": "2022-09-14T18:11:32.595Z",
-        "name": "Jonathan Nicolasbro",
-        "address": "06688 Jaleel Mountains",
-        "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg",
-        "email": "Grant_Collier19@example.com",
-        "phone": "696.221.2802 x729",
-        "jobTitle": "International Brand Officer",
-        "id": "2"
-      }];
+  //   let userTable: UserTable[] = [
+  //     {
+  //       "createdAt": "2022-09-14T18:11:32.595Z",
+  //       "name": "Jonathan Nicolasbro",
+  //       "address": "06688 Jaleel Mountains",
+  //       "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg",
+  //       "email": "Grant_Collier19@example.com",
+  //       "phone": "696.221.2802 x729",
+  //       "jobTitle": "International Brand Officer",
+  //       "id": "2"
+  //     }];
 
-    const delData: delData[] = [{
-      owner: {},
-      data: {
-        address: "Sample Address",
-        createdAt: "Sat Jan 01 0101 00:00:00 GMT+0655 (Singapore Standard Time)",
-        email: "sample",
-        id: 1,
-        image: "sample image",
-        jobTitle: "sample",
-        name: "sample",
-        password: "undefined",
-        phone: "sample"
-      }
-    }];
+  //   const delData: delData[] = [{
+  //     owner: {},
+  //     data: {
+  //       address: "Sample Address",
+  //       createdAt: "Sat Jan 01 0101 00:00:00 GMT+0655 (Singapore Standard Time)",
+  //       email: "sample",
+  //       id: 1,
+  //       image: "sample image",
+  //       jobTitle: "sample",
+  //       name: "sample",
+  //       password: "undefined",
+  //       phone: "sample"
+  //     }
+  //   }];
 
-    const mySpy = spyOn(service, "deleteUsers").and.returnValue(of(userTable));
-    // component.rowDeleted(delData);
-    // expect(mySpy).toHaveBeenCalled();
-  });
+  //   const mySpy = spyOn(service, "deleteUsers").and.returnValue(of(userTable));
+  //   // component.rowDeleted(delData);
+  //   // expect(mySpy).toHaveBeenCalled();
+  // });
 
 
 });

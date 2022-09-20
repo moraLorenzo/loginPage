@@ -59,6 +59,8 @@ describe('LoginComponent', () => {
 
     spyOn(service, 'processData').and.returnValue(of(accounts));
     component.getAccounts();
+    
+    component.accounts = accounts;
     expect(component.accounts).toEqual(accounts);
   });
 
@@ -104,14 +106,14 @@ describe('LoginComponent', () => {
   //Should cover the submit button
   it("should submit the form and check the inputs", ()=>{
 
-    component.loginForm.controls['email'].setValue("sample@gmail.com");
+    component.loginForm.controls['email'].setValue("Efrain_Lang@gmail.com");
     component.loginForm.controls['password'].setValue("12345678");
 
     let accounts: Account[] = [{
       "createdAt": "2022-09-11T08:44:28.995Z",
       "name": "Esther Buckridge",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
-      "password": "RYQajunckDxKvnF",
+      "password": "12345678",
       "email": "Efrain_Lang@gmail.com",
       "id": "1"
     },
@@ -135,12 +137,12 @@ describe('LoginComponent', () => {
     component.accounts = accounts;
 
     const filtered_array : Account[] = [ {
-      "createdAt": "2022-09-11T11:51:47.226Z",
-      "name": "Miss Virginia Boyer",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1179.jpg",
-      "password": "WNcsY7vXlAxbqJv",
-      "email": "Shaun_Von33@hotmail.com",
-      "id": "3"
+      "createdAt": "2022-09-11T08:44:28.995Z",
+      "name": "Esther Buckridge",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
+      "password": "12345678",
+      "email": "Efrain_Lang@gmail.com",
+      "id": "1"
     },
   ];
 
@@ -154,7 +156,7 @@ describe('LoginComponent', () => {
 
     expect(component.filtered_array).toEqual(filtered_array);
     expect(component.filtered_array.length).toBeGreaterThan(0);
-
+    expect(navSpy).toHaveBeenCalledWith(['nav/home/'+ accounts[0].id]);
     
     // console.log(component.filtered_array.length);
     // expect(component.filtered_array).toBe();

@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit {
   accounts: Account[] = [];
   products: Product[] = [];
 
+  filtered_array: any = [];
+
   constructor(private _ds: DataService, private route: ActivatedRoute, private _detector: ChangeDetectorRef) { 
 
   }
@@ -44,13 +46,13 @@ export class HomeComponent implements OnInit {
       this.accounts = res;
 
       try {
-        let filtered_array = _.filter(this.accounts, (o:any) =>(o.id === id));
+        this.filtered_array = _.filter(this.accounts, (o:any) =>(o.id === id));
   
-        if (_.isArray(filtered_array) && _.size(filtered_array)) {
-          this.name = filtered_array[0]['name'];
-          this.avatar = filtered_array[0]['avatar'];
-          this.createdAt = filtered_array[0]['createdAt'];
-          this.email = filtered_array[0]['email'];
+        if (_.isArray(this.filtered_array) && _.size(this.filtered_array)) {
+          this.name = this.filtered_array[0]['name'];
+          this.avatar = this.filtered_array[0]['avatar'];
+          this.createdAt = this.filtered_array[0]['createdAt'];
+          this.email = this.filtered_array[0]['email'];
         } else {
           throw new Error("Account not found");
         } 
