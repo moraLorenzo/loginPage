@@ -17,8 +17,6 @@ import { Product } from 'src/app/interfaces/products';
 export class HomeComponent implements OnInit {
 
   avatar: string = '';
-  email: string = '';
-  createdAt: string = '';
   name: string = '';
 
   accounts: Account[] = [];
@@ -46,13 +44,11 @@ export class HomeComponent implements OnInit {
       this.accounts = res;
 
       try {
-        this.filtered_array = _.filter(this.accounts, (o:any) =>(o.id === id));
+        this.filtered_array = _.filter(this.accounts, {"id": id});
   
         if (_.isArray(this.filtered_array) && _.size(this.filtered_array)) {
           this.name = this.filtered_array[0]['name'];
-          this.avatar = this.filtered_array[0]['avatar'];
-          this.createdAt = this.filtered_array[0]['createdAt'];
-          this.email = this.filtered_array[0]['email'];
+          // this.avatar = this.filtered_array[0]['avatar'];
         } else {
           throw new Error("Account not found");
         } 

@@ -64,44 +64,28 @@ describe('LoginComponent', () => {
     expect(component.accounts).toEqual(accounts);
   });
 
-  it('Click AddMessages',()=>{
-    fixture = TestBed.createComponent(LoginComponent);
-    component = fixture.componentInstance;
+  // it("should check if email is valid",()=>{
+  //   fixture.detectChanges();
 
-    spyOn(component, 'submit').and.callThrough();
-    component.addMessages();
-  });
+  //   fixture.whenStable().then(()=>{
+  //       let email = component.loginForm.controls['email'];
+  //       expect(email.valid).toBeTruthy();
 
-  it('Click AddMessages',()=>{
-    fixture = TestBed.createComponent(LoginComponent);
-    component = fixture.componentInstance;
+  //       expect(email.touched).toBeFalse();
+  //       expect(email.errors).toBeTrue();
+  //   })
+  // });
 
-    spyOn(component, 'addMessages').and.callThrough();
-    component.addMessages();
-  });
+  // it("should check if password is valid",()=>{
+  //   fixture.detectChanges();
 
-  it("should check if email is valid",()=>{
-    fixture.detectChanges();
+  //   fixture.whenStable().then(()=>{
+  //       let password = component.loginForm.controls['password'];
 
-    fixture.whenStable().then(()=>{
-        let email = component.loginForm.controls['email'];
-        expect(email.valid).toBeTruthy();
-
-        expect(email.touched).toBeFalse();
-        expect(email.errors).toBeTrue();
-    })
-  });
-
-  it("should check if password is valid",()=>{
-    fixture.detectChanges();
-
-    fixture.whenStable().then(()=>{
-        let password = component.loginForm.controls['password'];
-
-        expect(password.touched).toBeFalse();
-        expect(password.errors).toBeTrue();
-    })
-  });
+  //       expect(password.touched).toBeFalse();
+  //       expect(password.errors).toBeTrue();
+  //   })
+  // });
 
   //Should cover the submit button
   it("should submit the form and check the inputs", ()=>{
@@ -145,21 +129,16 @@ describe('LoginComponent', () => {
       "id": "1"
     },
   ];
-
-    //  expect(submit.filtered_array).toEqual(filtered_array);
+  
     spyOn(component, 'submit').and.callThrough();
     const navSpy = spyOn(router, "navigate");
     component.submit();
 
     component.filtered_array = filtered_array;
-    // component.filtered_array.length = 1;
 
     expect(component.filtered_array).toEqual(filtered_array);
     expect(component.filtered_array.length).toBeGreaterThan(0);
-    expect(navSpy).toHaveBeenCalledWith(['nav/home/'+ accounts[0].id]);
-    
-    // console.log(component.filtered_array.length);
-    // expect(component.filtered_array).toBe();
+    expect(navSpy).toHaveBeenCalledWith(['nav/home/'+ filtered_array[0].id]);
 
     // if(component.filtered_array.length > 0){
     //   expect(navSpy).toHaveBeenCalledWith(['nav/home/' + filtered_array[0].id]);
@@ -167,17 +146,14 @@ describe('LoginComponent', () => {
   });
 
 
-  it('error catch',()=>{
-    const filtered_array = null;
+  it('the submit function does not succeed', () => {
+    // const filtered_array = [];
 
-    component.filtered_array = filtered_array;
-    expect(component.filtered_array).toBe(filtered_array);
-    // expect(component.filtered_array.length).not.toBe(0);
-
-    const navSpy = spyOn(router, "navigate");
-    
+    // expect(component.filtered_array).toe;
+   
     component.submit();
 
+    expect(component.filtered_array.length).toBe(0);
   });
 
 });

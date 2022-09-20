@@ -1,18 +1,11 @@
 <div class="center">
-    <p-card [header]="name" [subheader]="email" [style]="{width: '90%'}" styleClass="shadow-2">
+    <p-card [header]="name" [style]="{width: '90%'}" styleClass="shadow-2">
         <ng-template pTemplate="header">
-            <!-- <img alt="Card" [src]="avatar"> -->
             <p-avatar [image]="avatar" size="large" shape="circle"></p-avatar>
         </ng-template>
-        <p>Created At: {{createdAt}}</p>
     </p-card>
 </div>
 <br>
-
-<!-- <div>
-    <ejs-grid [dataSource]='accounts' [allowPaging]="true" [pageSettings]='pageSettings'> </ejs-grid>
-</div> -->
-
 
 <div class="analytics" style="width: 90%; margin:auto">
     <app-chart></app-chart>

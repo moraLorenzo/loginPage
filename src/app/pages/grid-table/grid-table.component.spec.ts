@@ -114,7 +114,7 @@ describe('GridTableComponent', () => {
         "id": "2"
       }];
 
-    const eventData: eventData[] = [{
+    const eventData: any = [{
       owner: {},
       data: {
         address: "Sample Address",
@@ -124,7 +124,6 @@ describe('GridTableComponent', () => {
         image: "sample image",
         jobTitle: "sample",
         name: "sample",
-        password: "undefined",
         phone: "sample"
       }
     }];

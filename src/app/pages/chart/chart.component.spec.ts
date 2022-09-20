@@ -106,8 +106,59 @@ it('Get All Accounts',()=>{
   spyOn(service, 'getEmployee').and.returnValue(of(employee));
   component.getData();
 
-  component.piedata = employee;
-    expect(component.piedata).toBeTruthy;
+  component.piedata = [
+    {
+     "x": "March",
+     "y": 59337.79,
+     "id": "1"
+    },
+    {
+     "x": "February",
+     "y": 76845.75,
+     "id": "2"
+    },
+    {
+     "x": "August",
+     "y": 66008.32,
+     "id": "3"
+    },
+    {
+     "x": "August",
+     "y": 84038.85,
+     "id": "4"
+    },
+    {
+     "x": "February",
+     "y": 74274.81,
+     "id": "5"
+    },
+    {
+     "x": "November",
+     "y": 6335.32,
+     "id": "6"
+    },
+    {
+     "x": "August",
+     "y": 90936.85,
+     "id": "7"
+    },
+    {
+     "x": "July",
+     "y": 61839.83,
+     "id": "8"
+    },
+    {
+     "x": "October",
+     "y": 94837.97,
+     "id": "9"
+    },
+    {
+     "x": "July",
+     "y": 87707.38,
+     "id": "10"
+    }
+   ];
+  expect(component.piedata).toEqual(employee);
 
 });
 

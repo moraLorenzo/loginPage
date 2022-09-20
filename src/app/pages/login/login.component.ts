@@ -59,9 +59,9 @@ export class LoginComponent implements OnInit {
 
         this._rt.navigate(['nav/home/'+ this.filtered_array[0].id]);
       } 
-      // else {
-      //   throw new Error("Account not found");
-      // }
+      else {
+        throw new Error("Account not found");
+      }
     } 
     catch (error: any) {
       alert(error.message);
