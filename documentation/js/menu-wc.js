@@ -59,13 +59,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-0543dd7ae1089c2098d8d9116f57b55ffa6dc0453cee6a69cc21ca43995a3072e8cf727730a1f5ff7501698b95466fd6d90b4a13fbdbaa22fc61f586eaf58211"' : 'data-target="#xs-components-links-module-AppModule-0543dd7ae1089c2098d8d9116f57b55ffa6dc0453cee6a69cc21ca43995a3072e8cf727730a1f5ff7501698b95466fd6d90b4a13fbdbaa22fc61f586eaf58211"' }>
+                                            'data-target="#components-links-module-AppModule-fb622564bfcd1c4721f82c0d986a6e94d595758e52a181be7a99fa757b7d8f57d4d5b4060769dff491685ebc0ba58f9f8ad474e4ace639839d7627b7eed5d602"' : 'data-target="#xs-components-links-module-AppModule-fb622564bfcd1c4721f82c0d986a6e94d595758e52a181be7a99fa757b7d8f57d4d5b4060769dff491685ebc0ba58f9f8ad474e4ace639839d7627b7eed5d602"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-0543dd7ae1089c2098d8d9116f57b55ffa6dc0453cee6a69cc21ca43995a3072e8cf727730a1f5ff7501698b95466fd6d90b4a13fbdbaa22fc61f586eaf58211"' :
-                                            'id="xs-components-links-module-AppModule-0543dd7ae1089c2098d8d9116f57b55ffa6dc0453cee6a69cc21ca43995a3072e8cf727730a1f5ff7501698b95466fd6d90b4a13fbdbaa22fc61f586eaf58211"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-fb622564bfcd1c4721f82c0d986a6e94d595758e52a181be7a99fa757b7d8f57d4d5b4060769dff491685ebc0ba58f9f8ad474e4ace639839d7627b7eed5d602"' :
+                                            'id="xs-components-links-module-AppModule-fb622564bfcd1c4721f82c0d986a6e94d595758e52a181be7a99fa757b7d8f57d4d5b4060769dff491685ebc0ba58f9f8ad474e4ace639839d7627b7eed5d602"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppComponent</a>
                                             </li>
@@ -156,13 +156,22 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/Account.html" data-type="entity-link" >Account</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/delData.html" data-type="entity-link" >delData</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/Employee.html" data-type="entity-link" >Employee</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/eventData.html" data-type="entity-link" >eventData</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Product.html" data-type="entity-link" >Product</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/UserTable.html" data-type="entity-link" >UserTable</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Visible.html" data-type="entity-link" >Visible</a>
                             </li>
                         </ul>
                     </li>

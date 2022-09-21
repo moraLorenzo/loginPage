@@ -4,7 +4,7 @@ export interface Employee {
   id: string
 }
 
-export interface eventData{
+export interface Eventdata{
   owner: {},
   data: {
     address: "Sample Address",
@@ -19,7 +19,7 @@ export interface eventData{
   }
 }
 
-export interface delData{
+export interface Deldata{
   owner: {},
   data: {
     address: "Sample Address",

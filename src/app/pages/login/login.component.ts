@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   accounts: Account[] = [];
   msgs: Message[] = [];
 
-  filtered_array: any = [];
+  filtered_array: Account[] = [];
 
   constructor(private _ds: DataService, private _fb: FormBuilder, private _rt: Router) { }
 

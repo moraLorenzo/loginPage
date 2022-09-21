@@ -139,18 +139,10 @@ describe('LoginComponent', () => {
     expect(component.filtered_array).toEqual(filtered_array);
     expect(component.filtered_array.length).toBeGreaterThan(0);
     expect(navSpy).toHaveBeenCalledWith(['nav/home/'+ filtered_array[0].id]);
-
-    // if(component.filtered_array.length > 0){
-    //   expect(navSpy).toHaveBeenCalledWith(['nav/home/' + filtered_array[0].id]);
-    // }
   });
 
 
-  it('the submit function does not succeed', () => {
-    // const filtered_array = [];
-
-    // expect(component.filtered_array).toe;
-   
+  it('the submit function does not succeed', () => {   
     component.submit();
 
     expect(component.filtered_array.length).toBe(0);

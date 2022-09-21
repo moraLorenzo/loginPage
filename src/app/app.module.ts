@@ -19,11 +19,9 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { HomeComponent } from './pages/home/home.component';
 import { AvatarModule } from 'primeng/avatar';
-// import {AvatarGroupModule} from 'primeng/avatargroup';
 
 //Syncfusion
-import { AccumulationChartModule } from '@syncfusion/ej2-angular-charts';
-import { PieSeriesService, AccumulationLegendService } from '@syncfusion/ej2-angular-charts';
+import { PieSeriesService, AccumulationLegendService, AccumulationChartModule } from '@syncfusion/ej2-angular-charts';
 
 
 // import the GridModule for the Grid component

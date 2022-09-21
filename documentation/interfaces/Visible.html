@@ -47,7 +47,7 @@
   <li>Interfaces</li>
   <li
   >
-  Employee</li>
+  Visible</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -65,7 +65,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/interfaces/employee.ts</code>
+            <code>src/app/interfaces/products.ts</code>
         </p>
 
 
@@ -84,21 +84,9 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#id" 
+                                        <a href="#visible" 
 >
-                                            id
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#x" 
->
-                                            x
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#y" 
->
-                                            y
+                                            visible
                                         </a>
                                 </li>
                             </ul>
@@ -116,9 +104,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="id"></a>
-                                        <span class="name "><b>id</b>
-                                            <a href="#id">
+                                        <a name="visible"></a>
+                                        <span class="name "><b>visible</b>
+                                            <a href="#visible">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -126,7 +114,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>id:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>visible:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -134,73 +122,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="x"></a>
-                                        <span class="name "><b>x</b>
-                                            <a href="#x">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>x:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="y"></a>
-                                        <span class="name "><b>y</b>
-                                            <a href="#y">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>y:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                                         </td>
                                     </tr>
@@ -216,40 +138,21 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface Employee {
-  x: string
-  y: number
-  id: string
-}
-
-export interface eventData{
-  owner: {},
-  data: {
-    address: &quot;Sample Address&quot;,
-    createdAt: &quot;Sat Jan 01 0101 00:00:00 GMT+0655 (Singapore Standard Time)&quot;,
-    email : &quot;sample&quot;,
-    id : &quot;cf48ca9d-9c29-45e1-bf9f-6c413b0bcace&quot;,
-    image : &quot;sample image&quot;,
-    jobTitle : &quot;sample&quot;,
-    name : &quot;sample&quot;,
-    password :&quot;undefined&quot;,
-    phone : &quot;sample&quot;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface Product {
+    createdAt: string
+    product_name: string
+    product_price: string
+    product_adj: string
+    product_material: string
+    product_desc: string
+    producer: string
+    city: string
+    country: string
+    id: string
   }
-}
 
-export interface delData{
-  owner: {},
-  data: {
-    address: &quot;Sample Address&quot;,
-    createdAt: &quot;Sat Jan 01 0101 00:00:00 GMT+0655 (Singapore Standard Time)&quot;,
-    email : &quot;sample&quot;,
-    id : 1,
-    image : &quot;sample image&quot;,
-    jobTitle : &quot;sample&quot;,
-    name : &quot;sample&quot;,
-    password :&quot;undefined&quot;,
-    phone : &quot;sample&quot;
-  }
+export interface Visible {
+  visible: boolean
 }</code></pre>
     </div>
 </div>
@@ -287,7 +190,7 @@ export interface delData{
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'Employee.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'Visible.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

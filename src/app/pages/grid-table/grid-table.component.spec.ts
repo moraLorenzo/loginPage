@@ -119,24 +119,6 @@ describe('GridTableComponent', () => {
 
     spyOn(service, 'addUsers').and.returnValue(of(userTable));
     expect(component.rowAdded(IDataEvents as IRowDataEventArgs)).toBeTruthy();
-
-    // const eventData: any = [{
-    //   owner: {},
-    //   data: {
-    //     address: "Sample Address",
-    //     createdAt: "Sat Jan 01 0101 00:00:00 GMT+0655 (Singapore Standard Time)",
-    //     email: "sample",
-    //     id: "cf48ca9d-9c29-45e1-bf9f-6c413b0bcace",
-    //     image: "sample image",
-    //     jobTitle: "sample",
-    //     name: "sample",
-    //     phone: "sample"
-    //   }
-    // }];
-
-    // const mySpy = spyOn(service, "addUsers").and.returnValue(of(userTable));
-    // component.rowAdded(eventData);
-    // expect(mySpy).toHaveBeenCalled();
   });
 
   it('should delete user data', () => {
