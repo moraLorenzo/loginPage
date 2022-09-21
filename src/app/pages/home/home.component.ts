@@ -39,22 +39,10 @@ export class HomeComponent implements OnInit {
 
 
   public async getAccounts(id: number) {
-    await firstValueFrom(this._ds.processData('accounts'))?.then((res: Account[]) => {
-
-      this.accounts = res;
-
-      try {
-        this.filtered_array = _.filter(this.accounts, {"id": id});
-  
-        if (_.isArray(this.filtered_array) && _.size(this.filtered_array)) {
-          this.name = this.filtered_array[0]['name'];
-          // this.avatar = this.filtered_array[0]['avatar'];
-        } else {
-          throw new Error("Account not found");
-        } 
-      }catch (error: any) {
-        alert(error.message);
-      }
+    await firstValueFrom(this._ds.processData('accounts/'+ id))?.then((res:Account[]) => {
+      this.filtered_array = res;
+      this.name = this.filtered_array.name;
+      this.avatar = this.filtered_array.avatar;
     });
   }
 

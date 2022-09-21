@@ -1,17 +1,18 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { IRowDataEventArgs } from 'igniteui-angular';
 import { of } from 'rxjs';
-import { Employee, eventData, delData } from 'src/app/interfaces/employee';
 import { UserTable } from 'src/app/interfaces/users';
 import { DataService } from 'src/app/services/data.service';
-
 import { GridTableComponent } from './grid-table.component';
 
 
 describe('GridTableComponent', () => {
   let component: GridTableComponent;
   let fixture: ComponentFixture<GridTableComponent>;
+  let IDataEvents = { data: {} }
+
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -100,7 +101,45 @@ describe('GridTableComponent', () => {
   });
 
   it('should add user data', () => {
+    let userTable: UserTable[] = [
+      {
+        "createdAt": "2022-09-14T18:11:32.595Z",
+        "name": "Jonathan Nicolasbro",
+        "address": "06688 Jaleel Mountains",
+        "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg",
+        "email": "Grant_Collier19@example.com",
+        "phone": "696.221.2802 x729",
+        "jobTitle": "International Brand Officer",
+        "id": "2"
+      }];
+
+    fixture = TestBed.createComponent(GridTableComponent);
+    component = fixture.componentInstance;
     const service = fixture.debugElement.injector.get(DataService);
+
+    spyOn(service, 'addUsers').and.returnValue(of(userTable));
+    expect(component.rowAdded(IDataEvents as IRowDataEventArgs)).toBeTruthy();
+
+    // const eventData: any = [{
+    //   owner: {},
+    //   data: {
+    //     address: "Sample Address",
+    //     createdAt: "Sat Jan 01 0101 00:00:00 GMT+0655 (Singapore Standard Time)",
+    //     email: "sample",
+    //     id: "cf48ca9d-9c29-45e1-bf9f-6c413b0bcace",
+    //     image: "sample image",
+    //     jobTitle: "sample",
+    //     name: "sample",
+    //     phone: "sample"
+    //   }
+    // }];
+
+    // const mySpy = spyOn(service, "addUsers").and.returnValue(of(userTable));
+    // component.rowAdded(eventData);
+    // expect(mySpy).toHaveBeenCalled();
+  });
+
+  it('should delete user data', () => {
 
     let userTable: UserTable[] = [
       {
@@ -114,59 +153,14 @@ describe('GridTableComponent', () => {
         "id": "2"
       }];
 
-    const eventData: any = [{
-      owner: {},
-      data: {
-        address: "Sample Address",
-        createdAt: "Sat Jan 01 0101 00:00:00 GMT+0655 (Singapore Standard Time)",
-        email: "sample",
-        id: "cf48ca9d-9c29-45e1-bf9f-6c413b0bcace",
-        image: "sample image",
-        jobTitle: "sample",
-        name: "sample",
-        phone: "sample"
-      }
-    }];
+    fixture = TestBed.createComponent(GridTableComponent);
+    component = fixture.componentInstance;
 
-    const mySpy = spyOn(service, "addUsers").and.returnValue(of(userTable));
-    component.rowAdded(eventData);
-    expect(mySpy).toHaveBeenCalled();
+    const service = fixture.debugElement.injector.get(DataService);
+
+    spyOn(service, 'deleteUsers').and.returnValue(of(userTable));
+    expect(component.rowDeleted(IDataEvents as IRowDataEventArgs)).toBeTruthy();
   });
-
-  // it('should delete user data', () => {
-  //   const service = fixture.debugElement.injector.get(DataService);
-
-  //   let userTable: UserTable[] = [
-  //     {
-  //       "createdAt": "2022-09-14T18:11:32.595Z",
-  //       "name": "Jonathan Nicolasbro",
-  //       "address": "06688 Jaleel Mountains",
-  //       "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg",
-  //       "email": "Grant_Collier19@example.com",
-  //       "phone": "696.221.2802 x729",
-  //       "jobTitle": "International Brand Officer",
-  //       "id": "2"
-  //     }];
-
-  //   const delData: delData[] = [{
-  //     owner: {},
-  //     data: {
-  //       address: "Sample Address",
-  //       createdAt: "Sat Jan 01 0101 00:00:00 GMT+0655 (Singapore Standard Time)",
-  //       email: "sample",
-  //       id: 1,
-  //       image: "sample image",
-  //       jobTitle: "sample",
-  //       name: "sample",
-  //       password: "undefined",
-  //       phone: "sample"
-  //     }
-  //   }];
-
-  //   const mySpy = spyOn(service, "deleteUsers").and.returnValue(of(userTable));
-  //   // component.rowDeleted(delData);
-  //   // expect(mySpy).toHaveBeenCalled();
-  // });
 
 
 });

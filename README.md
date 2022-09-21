@@ -16,23 +16,48 @@
 
 ### 🏠 [Homepage](https://github.com/moraLorenzo/loginPage#readme)
 
+<br>
+
 ## Install
 
 ```sh
 npm install
 ```
+<br>
 
 ## Usage
 
 ```sh
-npm run start
+ng serve
 ```
+<br>
 
 ## Run tests
 
 ```sh
 npm run test
 ```
+
+or
+
+```sh
+npm run cypress:open
+```
+<br>
+
+## Lint
+
+```sh
+npm run lint
+```
+<br>
+
+## Snyk
+
+```sh
+snyk code test
+```
+
 
 ## Author
 

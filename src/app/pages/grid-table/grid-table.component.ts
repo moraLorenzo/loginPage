@@ -2,14 +2,11 @@ import { Component, OnInit, ViewChild, ChangeDetectionStrategy, ChangeDetectorRe
 import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom, Observable } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
-import { Account } from '../../interfaces/index';
 
 import * as _ from 'lodash';
 
 import { IRowDataEventArgs, IGridEditDoneEventArgs } from 'igniteui-angular';
 import { IgxGridComponent } from 'igniteui-angular';
-
-import { Product } from 'src/app/interfaces/products';
 import { UserTable } from 'src/app/interfaces/users';
 
 @Component({
@@ -23,8 +20,6 @@ export class GridTableComponent implements OnInit {
   public caseSensitive: boolean = false;
   public exactMatch: boolean = false;
 
-  
-
   @ViewChild('grid1', { static: true }) public grid!: IgxGridComponent;
   usersTable: UserTable[] = [];
 
@@ -37,12 +32,10 @@ export class GridTableComponent implements OnInit {
 
   async getData(): Promise<void> {
     await firstValueFrom(this._ds.getUsers()).then((res: UserTable[]) => (this.usersTable = res), console.error);
-    // console.log(this.usersTable);
   }
 
 
-  async rowAdded(event: any): Promise<void> {
-    // console.log(event.data);
+  async rowAdded(event: IRowDataEventArgs): Promise<void> {
     await firstValueFrom(this._ds.addUsers(event.data)).then((res: UserTable[]) => console.log, console.error);
   }
 
@@ -50,16 +43,6 @@ export class GridTableComponent implements OnInit {
     this.searchText = '';
     // this.grid.clearSearch();
   }
-
-  // public searchKeyDown(ev: KeyboardEvent): void {
-  //   if (!_.indexOf(['Enter', 'ArrowDown', 'ArrowRight'], ev.key)) {
-  //     ev.preventDefault();
-  //     this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
-  //   } else if (!_.indexOf(['ArrowUp', 'ArrowLeft'], ev.key)) {
-  //     ev.preventDefault();
-  //     this.grid.findPrev(this.searchText, this.caseSensitive, this.exactMatch);
-  //   }
-  // }
 
   public updateSearch(): void {
     this.caseSensitive = !this.caseSensitive;
@@ -71,12 +54,8 @@ export class GridTableComponent implements OnInit {
     // this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
   }
 
-  async rowDeleted(event: any): Promise<void> {
+  async rowDeleted(event: IRowDataEventArgs): Promise<void> {
     await firstValueFrom(this._ds.deleteUsers(event.data.id)).then((res: UserTable[]) => console.log, console.error);
   }
-
-  // async rowEditDone(event: IGridEditDoneEventArgs): Promise<void> {
-  //   await firstValueFrom(this._ds.putUsers(event.rowID, event.newValue)).then((res: UserTable[]) => this.getData(), console.error);
-  // }
 
 }

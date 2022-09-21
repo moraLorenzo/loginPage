@@ -42,3 +42,7 @@
     min-height: 100% !important;
     background-color: #D2FEBD;
 }
+
+:host ::ng-deep .p-card-header{
+  padding: 1.25rem;
+}

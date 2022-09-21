@@ -6,7 +6,6 @@ import { Account } from '../interfaces';
 import { DataService } from './data.service';
 import { environment } from 'src/environments/environment';
 import { UserTable } from '../interfaces/users';
-// import { mockBookArray } from 'src/mocks/mockBooks';
 
 describe('DataService', () => {
   let service: DataService;
@@ -26,36 +25,6 @@ describe('DataService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
-  // it('should be able to get user accounts from API', () => {
-  //   const accounts: Account[] = [ {
-  //     "createdAt": "2022-09-11T08:44:28.995Z",
-  //     "name": "Esther Buckridge",
-  //     "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
-  //     "password": "RYQajunckDxKvnF",
-  //     "email": "Efrain_Lang@gmail.com",
-  //     "id": "1"
-  //   },
-  //   {
-  //     "createdAt": "2022-09-11T21:01:22.631Z",
-  //     "name": "Bruce Denesik",
-  //     "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/842.jpg",
-  //     "password": "CjVJlgeImU3h5Q8",
-  //     "email": "Orpha.Wunsch@hotmail.com",
-  //     "id": "2"
-  //   }];
-
-  //     service.processData('accounts').subscribe(accounts => {
-  //       expect(accounts.length).toBe(2);
-  //       expect(accounts).toEqual(accounts);
-  //     })
-
-  //   const request = controller.expectOne(`${environment.baseURL}accounts`);
-
-  //   expect(request.request.method).toBe('GET');
-
-  //   request.flush(accounts)
-  // });
 
   it('should have return data from API', () => {
     const accounts: Account[] = [{
@@ -155,29 +124,23 @@ describe('DataService', () => {
     });
 
     req.flush(accountEntry);
+
+    controller.verify();
   });
 
-  //For putting users
-//   it('should call putUsers', () => {
-//     const updatedBook: Book = {
-//       id: '1',
-//       title: 'New title',
-//       author: 'Author 1',
-//     };
+  it('sample deleter user testing', ()=>{
+    let user_id = 1;
+    service.deleteUsers(user_id).subscribe((data:any) => {
+      expect(data).toBe(user_id);
+    });
 
-//     service.putUsers(mockBook1).subscribe((data) => {
-//       expect(data).toEqual(updatedBook);
-//     });
+    const req = controller.expectOne({
+      method: 'DELETE',
+      url:`${environment.tagURL}/getDataTable/${user_id}`,
+    });
 
-//     const req = httpController.expectOne({
-//       method: 'PUT',
-//       url: `${url}/books`,
-//     });
+    req.flush(user_id);
 
-//     req.flush(updatedBook);
-// });
-
-  //For Deleting a User
-  
-
+    controller.verify();
+  });
 });
