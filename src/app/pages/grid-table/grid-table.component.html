@@ -10,7 +10,6 @@
 
                 <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText"
                     (ngModelChange)="grid.findNext(searchText, caseSensitive, exactMatch)"/>
-                    <!-- (keydown)="searchKeyDown($event)"  -->
 
                 <igx-suffix *ngIf="searchText.length > 0">
                     <div class="resultsText" *ngIf="grid.lastSearchInfo">
@@ -52,8 +51,6 @@
                 height="auto" [rowEditable]="true" [allowFiltering]="true" (rowAdded)="rowAdded($event)"
                 (rowDeleted)="rowDeleted($event)" >
 
-                <!-- (rowEditDone)="rowEditDone($event)"> -->
-
                 <igx-paginator [perPage]="10"></igx-paginator>
                 <igx-column field="id" header="User ID"></igx-column>
                 <igx-column field="name" header="Name" [dataType]="'string'"></igx-column>
@@ -69,7 +66,6 @@
                     </ng-template>
                 </igx-column>
                 <igx-column field="createdAt" header="Created Date" [dataType]="'date'"></igx-column>
-                <!-- <igx-column field="Discontinued" header="Discontinued" [dataType]="'boolean'"></igx-column> -->
 
                 <igx-action-strip #actionstrip>
                     <igx-grid-editing-actions [editRow]="true" [addRow]="true" [deleteRow]="true">

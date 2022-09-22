@@ -1,12 +1,9 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { firstValueFrom, Observable } from 'rxjs';
+import { firstValueFrom} from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 
-import * as _ from 'lodash';
-
-import { IRowDataEventArgs, IGridEditDoneEventArgs } from 'igniteui-angular';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IRowDataEventArgs, IgxGridComponent } from 'igniteui-angular';
 import { UserTable } from 'src/app/interfaces/users';
 
 @Component({
@@ -41,17 +38,14 @@ export class GridTableComponent implements OnInit {
 
   public clearSearch(): void {
     this.searchText = '';
-    // this.grid.clearSearch();
   }
 
   public updateSearch(): void {
     this.caseSensitive = !this.caseSensitive;
-    // this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
   }
 
   public updateExactSearch(): void {
     this.exactMatch = !this.exactMatch;
-    // this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
   }
 
   async rowDeleted(event: IRowDataEventArgs): Promise<void> {

@@ -1,10 +1,8 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { firstValueFrom, Observable } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { Account } from '../../interfaces/index';
-
-import * as _ from 'lodash';
 
 import { Product } from 'src/app/interfaces/products';
 
