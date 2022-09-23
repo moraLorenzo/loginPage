@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-import { EmailValidator, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Message, MessageService } from 'primeng/api';
+import { Message } from 'primeng/api';
 import { Router } from '@angular/router';
 import { Account } from '../../interfaces/index';
 import { firstValueFrom } from 'rxjs';
@@ -74,5 +74,4 @@ export class LoginComponent implements OnInit {
       { severity: 'success', summary: 'Success', detail: 'Successfully Logged In!' },
     ];
   }
-
 }
