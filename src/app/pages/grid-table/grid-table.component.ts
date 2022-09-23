@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom} from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 
-import { IRowDataEventArgs, IgxGridComponent } from 'igniteui-angular';
+import { IRowDataEventArgs,IGridEditDoneEventArgs, IgxGridComponent } from 'igniteui-angular';
 import { UserTable } from 'src/app/interfaces/users';
 
 @Component({
@@ -33,7 +33,7 @@ export class GridTableComponent implements OnInit {
 
 
   async rowAdded(event: IRowDataEventArgs): Promise<void> {
-    await firstValueFrom(this._ds.addUsers(event.data)).then((res: UserTable[]) => console.log, console.error);
+   await firstValueFrom(this._ds.addUsers(event.data)).then((_res: UserTable[]) => console.log, console.error);
   }
 
   public clearSearch(): void {
@@ -49,7 +49,11 @@ export class GridTableComponent implements OnInit {
   }
 
   async rowDeleted(event: IRowDataEventArgs): Promise<void> {
-    await firstValueFrom(this._ds.deleteUsers(event.data.id)).then((res: UserTable[]) => console.log, console.error);
+    await firstValueFrom(this._ds.deleteUsers(event.data.id)).then((_res: UserTable[]) => console.log, console.error);
+  }
+
+  async rowEditDone(event: IGridEditDoneEventArgs): Promise<void> {
+    await firstValueFrom(this._ds.putUsers(event.rowID, event.newValue)).then((_res: UserTable[]) => this.getData(), console.error);
   }
 
 }

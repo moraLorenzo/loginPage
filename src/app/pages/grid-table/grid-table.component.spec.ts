@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { IRowDataEventArgs } from 'igniteui-angular';
+import { IGridEditDoneEventArgs, IRowDataEventArgs, IGridEditEventArgs } from 'igniteui-angular';
 import { of } from 'rxjs';
 import { UserTable } from 'src/app/interfaces/users';
 import { DataService } from 'src/app/services/data.service';
@@ -11,7 +11,9 @@ import { GridTableComponent } from './grid-table.component';
 describe('GridTableComponent', () => {
   let component: GridTableComponent;
   let fixture: ComponentFixture<GridTableComponent>;
-  let IDataEvents = { data: {} }
+  let IDataEvents = { data: {} };
+  let event = {rowID:{}, newValue:{}};
+
 
 
   beforeEach(async () => {
@@ -142,6 +144,29 @@ describe('GridTableComponent', () => {
 
     spyOn(service, 'deleteUsers').and.returnValue(of(userTable));
     expect(component.rowDeleted(IDataEvents as IRowDataEventArgs)).toBeTruthy();
+  });
+
+  it('should update user data', () => {
+
+    let userTable: UserTable[] = [
+      {
+        "createdAt": "2022-09-14T18:11:32.595Z",
+        "name": "Jonathan Nicolasbro",
+        "address": "06688 Jaleel Mountains",
+        "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg",
+        "email": "Grant_Collier19@example.com",
+        "phone": "696.221.2802 x729",
+        "jobTitle": "International Brand Officer",
+        "id": "2"
+      }];
+
+    fixture = TestBed.createComponent(GridTableComponent);
+    component = fixture.componentInstance;
+
+    const service = fixture.debugElement.injector.get(DataService);
+
+    spyOn(service, 'putUsers').and.returnValue(of(userTable));
+    expect(component.rowEditDone(event as IGridEditDoneEventArgs)).toBeTruthy();
   });
 
 

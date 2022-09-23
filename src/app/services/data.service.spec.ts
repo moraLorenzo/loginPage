@@ -120,7 +120,7 @@ describe('DataService', () => {
 
     const req = controller.expectOne({
       method: 'POST',
-      url: `${environment.tagURL}getDataTable`,
+      url: `${environment.baseURL}getDataTable`,
     });
 
     req.flush(accountEntry);
@@ -128,7 +128,7 @@ describe('DataService', () => {
     controller.verify();
   });
 
-  it('sample deleter user testing', ()=>{
+  it('sample delete user testing', ()=>{
     let user_id = 1;
     service.deleteUsers(user_id).subscribe((data:any) => {
       expect(data).toBe(user_id);
@@ -136,11 +136,39 @@ describe('DataService', () => {
 
     const req = controller.expectOne({
       method: 'DELETE',
-      url:`${environment.tagURL}/getDataTable/${user_id}`,
+      url:`${environment.baseURL}getDataTable/${user_id}`,
     });
 
     req.flush(user_id);
 
     controller.verify();
   });
+
+  it('sample update user testing', ()=>{
+    const accountEntry: UserTable[] = [{
+      "createdAt": "2022-09-14T18:11:32.595Z",
+      "name": "Jonathan NewBie",
+      "address": "06688 Jaleel Mountains",
+      "image": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg",
+      "email": "Grant_Collier19@example.com",
+      "phone": "696.221.2802 x729",
+      "jobTitle": "International Brand Officer",
+      "id": "99"
+    }];
+
+    let user_id = 2;
+    service.putUsers(user_id, accountEntry).subscribe((data) => {
+      expect(data).toBe(accountEntry);
+    });
+
+    const req = controller.expectOne({
+      method: 'PUT',
+      url:`${environment.baseURL}getDataTable/${user_id}`,
+    });
+
+    req.flush(accountEntry);
+
+    controller.verify();
+  });
+
 });

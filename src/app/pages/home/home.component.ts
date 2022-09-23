@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     let id = 0;
-    let sub = this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       id = params['id'];
     });
 
