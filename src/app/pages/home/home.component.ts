@@ -17,10 +17,7 @@ export class HomeComponent implements OnInit {
   avatar: string = '';
   name: string = '';
 
-  accounts: Account[] = [];
-  products: Product[] = [];
-
-  filtered_array: any = [];
+  filtered_array: Account[] = [];
 
   constructor(private _ds: DataService, private route: ActivatedRoute, private _detector: ChangeDetectorRef) { 
 
@@ -28,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     let id = 0;
-    this.route.params.subscribe(params => {
+    let sub = this.route.params.subscribe(params => {
       id = params['id'];
     });
 
@@ -39,8 +36,8 @@ export class HomeComponent implements OnInit {
   public async getAccounts(id: number) {
     await firstValueFrom(this._ds.processData('accounts/'+ id))?.then((res:Account[]) => {
       this.filtered_array = res;
-      this.name = this.filtered_array.name;
-      this.avatar = this.filtered_array.avatar;
+      let account = Object.entries(res);
+      this.name = account[2][1].toString();
     });
   }
 
