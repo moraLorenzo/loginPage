@@ -32,10 +32,13 @@ ng serve
 ```
 <br>
 
-## Run tests
 
-```sh
-npm run test
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
 ```
 
 or
@@ -56,6 +59,18 @@ npm run lint
 
 ```sh
 snyk code test
+```
+
+## Sonarqube
+
+```sh
+npm run sonar
+```
+
+## Show Documentation
+
+```sh
+npm run compodoc:serve
 ```
 
 
