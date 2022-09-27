@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Setup the decorator and set selector templateURl and styleURLs</p>
+
+    </p>
 
 
     <p class="comment">
@@ -185,12 +192,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_detector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, _ds: <a href="../injectables/DataService.html" target="_self">DataService</a>)</code>
+<code>constructor(_ds: DataService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/pages/chart/chart.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/chart/chart.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -204,32 +211,25 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>_detector</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
                                                         <td>_ds</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                                    <code>DataService</code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Inject Dataservice</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -271,14 +271,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/pages/chart/chart.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/pages/chart/chart.component.ts:60</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Send request to get all employees</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
@@ -308,14 +310,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/pages/chart/chart.component.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/pages/chart/chart.component.ts:46</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Call getData function, set legend visibility to true and update datalabel settings</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -351,10 +355,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/pages/chart/chart.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/chart/chart.component.ts:30</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Instantiate datalabel of type Object</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -382,10 +392,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/pages/chart/chart.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/chart/chart.component.ts:35</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Instantiate employee of type Employee</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -409,10 +425,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/pages/chart/chart.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/chart/chart.component.ts:25</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Instantiate legendSettings of type Visible</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -436,10 +458,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/pages/chart/chart.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/pages/chart/chart.component.ts:20</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Instantiate piedata of type Object</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -449,14 +477,15 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component, OnInit } from &#x27;@angular/core&#x27;;
-import { AccumulationChart, PieSeries, AccumulationDataLabel, Category, AccumulationLegend } from &#x27;@syncfusion/ej2-charts&#x27;;
-import { EmitType } from &#x27;@syncfusion/ej2-base&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { firstValueFrom } from &#x27;rxjs&#x27;;
 import { Employee } from &#x27;src/app/interfaces/employee&#x27;;
 import { DataService } from &#x27;src/app/services/data.service&#x27;;
 import { Visible } from &#x27;src/app/interfaces/products&#x27;;
 
+/**
+ * Setup the decorator and set selector templateURl and styleURLs
+ */
 @Component({
   selector: &#x27;app-chart&#x27;,
   templateUrl: &#x27;./chart.component.html&#x27;,
@@ -464,26 +493,37 @@ import { Visible } from &#x27;src/app/interfaces/products&#x27;;
 })
 export class ChartComponent implements OnInit {
 
-  
+  /**
+   * Instantiate piedata of type Object
+   */
   public piedata!: Object[];
+
+  /**
+   * Instantiate legendSettings of type Visible
+   */
   public legendSettings!: Visible;
+
+  /**
+   * Instantiate datalabel of type Object
+   */
   public datalabel!: Object;
 
+  /**
+   * Instantiate employee of type Employee
+   */
   employee: Employee[] &#x3D; [];
 
-  constructor(private _detector: ChangeDetectorRef, private _ds: DataService) { }
+  /**
+   * 
+   * @param _ds Inject Dataservice
+   */
+  constructor( private _ds: DataService) { }
 
+  /**
+   * Call getData function, set legend visibility to true and update datalabel settings
+   */
   ngOnInit() {
     this.getData();
-    // this.piedata &#x3D; [
-    //   { x: &#x27;Jan&#x27;, y: 3, text: &#x27;Jan: 3&#x27; }, 
-    //   { x: &#x27;Feb&#x27;, y: 3.5, text: &#x27;Feb: 3.5&#x27; },
-    //   { x: &#x27;Mar&#x27;, y: 7, text: &#x27;Mar: 7&#x27; }, 
-    //   { x: &#x27;Apr&#x27;, y: 13.5, text: &#x27;Apr: 13.5&#x27; },
-    //   { x: &#x27;May&#x27;, y: 19, text: &#x27;May: 19&#x27; }, { x: &#x27;Jun&#x27;, y: 23.5, text: &#x27;Jun: 23.5&#x27; },
-    //   { x: &#x27;Jul&#x27;, y: 26, text: &#x27;Jul: 26&#x27; }, { x: &#x27;Aug&#x27;, y: 25, text: &#x27;Aug: 25&#x27; },
-    //   { x: &#x27;Sep&#x27;, y: 21, text: &#x27;Sep: 21&#x27; }, { x: &#x27;Oct&#x27;, y: 15, text: &#x27;Oct: 15&#x27; },
-    //   { x: &#x27;Nov&#x27;, y: 9, text: &#x27;Nov: 9&#x27; }, { x: &#x27;Dec&#x27;, y: 3.5, text: &#x27;Dec: 3.5&#x27; }];
 
       this.legendSettings &#x3D; {
         visible: true
@@ -492,9 +532,12 @@ export class ChartComponent implements OnInit {
       this.datalabel &#x3D; { visible: true, name: &#x27;text&#x27;, position: &#x27;Outside&#x27; };
   }
 
+
+  /**
+   * Send request to get all employees
+   */
   async getData(): Promise&lt;void&gt; {
     await firstValueFrom(this._ds.getEmployee()).then((res: Employee[]) &#x3D;&gt; (this.employee &#x3D; res), console.error);
-    console.log(this.employee);
 
     this.piedata &#x3D; this.employee;
   }
@@ -505,11 +548,6 @@ export class ChartComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container vertical sample&quot;&gt;
-    &lt;!-- &lt;ejs-accumulationchart id&#x3D;&quot;chart-container&quot; title&#x3D;&quot;Employment Chart&quot; [legendSettings]&#x3D;&#x27;legendSettings&#x27;&gt;
-        &lt;e-accumulation-series-collection&gt;
-            &lt;e-accumulation-series [dataSource]&#x3D;&#x27;piedata&#x27; xName&#x3D;&#x27;x&#x27; yName&#x3D;&#x27;y&#x27; name&#x3D;&quot;January&quot;&gt;&lt;/e-accumulation-series&gt;
-        &lt;/e-accumulation-series-collection&gt;
-    &lt;/ejs-accumulationchart&gt; --&gt;
 
     &lt;ejs-accumulationchart id&#x3D;&quot;chart-container&quot; title&#x3D;&quot;Employment Chart&quot; [legendSettings]&#x3D;&#x27;legendSettings&#x27;&gt;
         &lt;e-accumulation-series-collection&gt;
@@ -524,7 +562,9 @@ export class ChartComponent implements OnInit {
                 <p class="comment">
                     <code>./chart.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.contents{
+    background-color: transparent;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -552,7 +592,7 @@ export class ChartComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container vertical sample">    <!-- <ejs-accumulationchart id="chart-container" title="Employment Chart" [legendSettings]=\'legendSettings\'>        <e-accumulation-series-collection>            <e-accumulation-series [dataSource]=\'piedata\' xName=\'x\' yName=\'y\' name="January"></e-accumulation-series>        </e-accumulation-series-collection>    </ejs-accumulationchart> -->    <ejs-accumulationchart id="chart-container" title="Employment Chart" [legendSettings]=\'legendSettings\'>        <e-accumulation-series-collection>            <e-accumulation-series [dataSource]=\'piedata\' xName=\'x\' yName=\'y\' [dataLabel]=\'datalabel\'></e-accumulation-series>        </e-accumulation-series-collection>    </ejs-accumulationchart>  </div>  </div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container vertical sample">    <ejs-accumulationchart id="chart-container" title="Employment Chart" [legendSettings]=\'legendSettings\'>        <e-accumulation-series-collection>            <e-accumulation-series [dataSource]=\'piedata\' xName=\'x\' yName=\'y\' [dataLabel]=\'datalabel\'></e-accumulation-series>        </e-accumulation-series-collection>    </ejs-accumulationchart>  </div>  </div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'GridTableComponent', 'selector': 'app-grid-table'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavComponent', 'selector': 'app-nav'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ChartComponent'};

@@ -1,7 +1,9 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+/**
+ * @ignore
+ */
 export const environment = {
   production: true,
   // baseURL : 'https://631ed0fb58a1c0fe9f58a438.mockapi.io/test/v1/',

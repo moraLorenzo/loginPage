@@ -1,9 +1,12 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { Employee } from 'src/app/interfaces/employee';
 import { DataService } from 'src/app/services/data.service';
 import { Visible } from 'src/app/interfaces/products';
 
+/**
+ * Setup the decorator and set selector templateURl and styleURLs
+ */
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
@@ -11,15 +14,35 @@ import { Visible } from 'src/app/interfaces/products';
 })
 export class ChartComponent implements OnInit {
 
-  
+  /**
+   * Instantiate piedata of type Object
+   */
   public piedata!: Object[];
+
+  /**
+   * Instantiate legendSettings of type Visible
+   */
   public legendSettings!: Visible;
+
+  /**
+   * Instantiate datalabel of type Object
+   */
   public datalabel!: Object;
 
+  /**
+   * Instantiate employee of type Employee
+   */
   employee: Employee[] = [];
 
-  constructor(private _detector: ChangeDetectorRef, private _ds: DataService) { }
+  /**
+   * 
+   * @param _ds Inject Dataservice
+   */
+  constructor( private _ds: DataService) { }
 
+  /**
+   * Call getData function, set legend visibility to true and update datalabel settings
+   */
   ngOnInit() {
     this.getData();
 
@@ -30,6 +53,10 @@ export class ChartComponent implements OnInit {
       this.datalabel = { visible: true, name: 'text', position: 'Outside' };
   }
 
+
+  /**
+   * Send request to get all employees
+   */
   async getData(): Promise<void> {
     await firstValueFrom(this._ds.getEmployee()).then((res: Employee[]) => (this.employee = res), console.error);
 

@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Setup the decorator and set selector templateURl and styleURLs</p>
+
+    </p>
 
 
     <p class="comment">
@@ -185,6 +192,10 @@
                                 <a href="#rowDeleted" >rowDeleted</a>
                             </li>
                             <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#rowEditDone" >rowEditDone</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#updateExactSearch" >updateExactSearch</a>
                             </li>
@@ -210,12 +221,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_ds: <a href="../injectables/DataService.html" target="_self">DataService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, _detector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
+<code>constructor(_ds: DataService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:46</a></div>
                             </td>
                         </tr>
 
@@ -229,6 +240,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -236,37 +248,17 @@
                                                         <td>_ds</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                                    <code>DataService</code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
-                                                </tr>
-                                                <tr>
-                                                        <td>route</td>
-                                                  
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                                <p>Inject Dataservice</p>
+
                                                         </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>_detector</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -308,14 +300,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:79</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Reassign searchText variable as empty string</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -347,14 +341,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:64</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get all user and assign to userTable variable to populate table</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
@@ -386,14 +382,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:57</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Call the getData method to get all the data to be populated</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
@@ -425,8 +423,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -443,6 +441,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -457,6 +456,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>whole row data</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -496,8 +499,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:101</a></div>
                 </td>
             </tr>
 
@@ -514,6 +517,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -528,6 +532,86 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>whole row data</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rowEditDone"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>rowEditDone</b></span>
+                        <a href="#rowEditDone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>rowEditDone(event: IGridEditDoneEventArgs)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>IGridEditDoneEventArgs</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>whole row data</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -567,14 +651,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:93</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Disable OR Enable the exact search option</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -606,14 +692,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:86</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Disable OR Enable the case sensitivity option</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -654,10 +742,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:31</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>set case sensitivity option to false</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -686,10 +780,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:36</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>set exact match option to false</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -722,10 +822,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:41</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>set gridcomponent property</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -754,10 +860,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:26</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Initialize search text value as empty string</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -785,10 +897,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/pages/grid-table/grid-table.component.ts:46</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Initialize the usertable data</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -798,64 +916,116 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef } from &#x27;@angular/core&#x27;;
-import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { firstValueFrom, Observable } from &#x27;rxjs&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, ChangeDetectorRef } from &#x27;@angular/core&#x27;;
+import { firstValueFrom} from &#x27;rxjs&#x27;;
 import { DataService } from &#x27;src/app/services/data.service&#x27;;
 
-import * as _ from &#x27;lodash&#x27;;
-
-import { IRowDataEventArgs, IGridEditDoneEventArgs } from &#x27;igniteui-angular&#x27;;
-import { IgxGridComponent } from &#x27;igniteui-angular&#x27;;
+import { IRowDataEventArgs,IGridEditDoneEventArgs, IgxGridComponent } from &#x27;igniteui-angular&#x27;;
 import { UserTable } from &#x27;src/app/interfaces/users&#x27;;
 
+
+/**
+ * Setup the decorator and set selector templateURl and styleURLs
+ */
 @Component({
   selector: &#x27;app-grid-table&#x27;,
   templateUrl: &#x27;./grid-table.component.html&#x27;,
   styleUrls: [&#x27;./grid-table.component.scss&#x27;]
 })
+
+/**
+ * Initialize the class
+ */
 export class GridTableComponent implements OnInit {
 
+  /**
+   * Initialize search text value as empty string
+   */
   public searchText: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * set case sensitivity option to false
+   */
   public caseSensitive: boolean &#x3D; false;
+
+  /**
+   * set exact match option to false
+   */
   public exactMatch: boolean &#x3D; false;
 
+  /**
+   * set gridcomponent property
+   */
   @ViewChild(&#x27;grid1&#x27;, { static: true }) public grid!: IgxGridComponent;
+
+  /**
+   * Initialize the usertable data
+   */
   usersTable: UserTable[] &#x3D; [];
 
+  /**
+   * 
+   * @param _ds Inject Dataservice
+   */
+  constructor(private _ds: DataService) { }
 
-  constructor(private _ds: DataService, private route: ActivatedRoute, private _detector: ChangeDetectorRef) { }
-
+  /**
+   * Call the getData method to get all the data to be populated
+   */
   async ngOnInit(): Promise&lt;void&gt; {
     await this.getData();
   }
 
+  /**
+   * Get all user and assign to userTable variable to populate table
+   */
   async getData(): Promise&lt;void&gt; {
     await firstValueFrom(this._ds.getUsers()).then((res: UserTable[]) &#x3D;&gt; (this.usersTable &#x3D; res), console.error);
   }
 
-
+  /**
+   * 
+   * @param event whole row data
+   */
   async rowAdded(event: IRowDataEventArgs): Promise&lt;void&gt; {
-    await firstValueFrom(this._ds.addUsers(event.data)).then((res: UserTable[]) &#x3D;&gt; console.log, console.error);
+   await firstValueFrom(this._ds.addUsers(event.data)).then((_res: UserTable[]) &#x3D;&gt; console.log, console.error);
   }
 
+  /**
+   * Reassign searchText variable as empty string
+   */
   public clearSearch(): void {
     this.searchText &#x3D; &#x27;&#x27;;
-    // this.grid.clearSearch();
   }
 
+  /**
+   * Disable OR Enable the case sensitivity option
+   */
   public updateSearch(): void {
     this.caseSensitive &#x3D; !this.caseSensitive;
-    // this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
   }
 
+  /**
+   * Disable OR Enable the exact search option
+   */
   public updateExactSearch(): void {
     this.exactMatch &#x3D; !this.exactMatch;
-    // this.grid.findNext(this.searchText, this.caseSensitive, this.exactMatch);
   }
 
+   /**
+    * 
+    * @param event whole row data
+    */
   async rowDeleted(event: IRowDataEventArgs): Promise&lt;void&gt; {
-    await firstValueFrom(this._ds.deleteUsers(event.data.id)).then((res: UserTable[]) &#x3D;&gt; console.log, console.error);
+    await firstValueFrom(this._ds.deleteUsers(event.data.id)).then((_res: UserTable[]) &#x3D;&gt; console.log, console.error);
+  }
+
+  /**
+   * 
+   * @param event whole row data
+   */
+  async rowEditDone(event: IGridEditDoneEventArgs): Promise&lt;void&gt; {
+    await firstValueFrom(this._ds.putUsers(event.rowID, event.newValue)).then((_res: UserTable[]) &#x3D;&gt; this.getData(), console.error);
   }
 
 }
@@ -875,7 +1045,6 @@ export class GridTableComponent implements OnInit {
 
                 &lt;input #search1 id&#x3D;&quot;search1&quot; igxInput placeholder&#x3D;&quot;Search&quot; [(ngModel)]&#x3D;&quot;searchText&quot;
                     (ngModelChange)&#x3D;&quot;grid.findNext(searchText, caseSensitive, exactMatch)&quot;/&gt;
-                    &lt;!-- (keydown)&#x3D;&quot;searchKeyDown($event)&quot;  --&gt;
 
                 &lt;igx-suffix *ngIf&#x3D;&quot;searchText.length &gt; 0&quot;&gt;
                     &lt;div class&#x3D;&quot;resultsText&quot; *ngIf&#x3D;&quot;grid.lastSearchInfo&quot;&gt;
@@ -915,9 +1084,7 @@ export class GridTableComponent implements OnInit {
 
             &lt;igx-grid igxPreventDocumentScroll #grid1 id&#x3D;&quot;grid1&quot; [data]&#x3D;&quot;usersTable&quot; [primaryKey]&#x3D;&quot;&#x27;id&#x27;&quot; width&#x3D;&quot;100%&quot;
                 height&#x3D;&quot;auto&quot; [rowEditable]&#x3D;&quot;true&quot; [allowFiltering]&#x3D;&quot;true&quot; (rowAdded)&#x3D;&quot;rowAdded($event)&quot;
-                (rowDeleted)&#x3D;&quot;rowDeleted($event)&quot; &gt;
-
-                &lt;!-- (rowEditDone)&#x3D;&quot;rowEditDone($event)&quot;&gt; --&gt;
+                (rowDeleted)&#x3D;&quot;rowDeleted($event)&quot; (rowEditDone)&#x3D;&quot;rowEditDone($event)&quot;&gt;
 
                 &lt;igx-paginator [perPage]&#x3D;&quot;10&quot;&gt;&lt;/igx-paginator&gt;
                 &lt;igx-column field&#x3D;&quot;id&quot; header&#x3D;&quot;User ID&quot;&gt;&lt;/igx-column&gt;
@@ -934,7 +1101,6 @@ export class GridTableComponent implements OnInit {
                     &lt;/ng-template&gt;
                 &lt;/igx-column&gt;
                 &lt;igx-column field&#x3D;&quot;createdAt&quot; header&#x3D;&quot;Created Date&quot; [dataType]&#x3D;&quot;&#x27;date&#x27;&quot;&gt;&lt;/igx-column&gt;
-                &lt;!-- &lt;igx-column field&#x3D;&quot;Discontinued&quot; header&#x3D;&quot;Discontinued&quot; [dataType]&#x3D;&quot;&#x27;boolean&#x27;&quot;&gt;&lt;/igx-column&gt; --&gt;
 
                 &lt;igx-action-strip #actionstrip&gt;
                     &lt;igx-grid-editing-actions [editRow]&#x3D;&quot;true&quot; [addRow]&#x3D;&quot;true&quot; [deleteRow]&#x3D;&quot;true&quot;&gt;
@@ -952,7 +1118,9 @@ export class GridTableComponent implements OnInit {
                 <p class="comment">
                     <code>./grid-table.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.contents{
+    background-color: transparent;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -980,7 +1148,7 @@ export class GridTableComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div>    <div class="card-table">        <div class="sample-wrapper">            <igx-input-group type="search" class="offset">                <igx-prefix>                    <igx-icon *ngIf="searchText.length === 0">search</igx-icon>                    <igx-icon *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>                </igx-prefix>                <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText"                    (ngModelChange)="grid.findNext(searchText, caseSensitive, exactMatch)"/>                    <!-- (keydown)="searchKeyDown($event)"  -->                <igx-suffix *ngIf="searchText.length > 0">                    <div class="resultsText" *ngIf="grid.lastSearchInfo">                        <span *ngIf="grid.lastSearchInfo.matchInfoCache.length > 0">                            {{ grid.lastSearchInfo.activeMatchIndex + 1 }} of {{                            grid.lastSearchInfo.matchInfoCache.length }}                            results                        </span>                        <span *ngIf="grid.lastSearchInfo.matchInfoCache.length === 0">                            No results                        </span>                    </div>                    <div class="chips">                        <igx-chips-area>                            <igx-chip (click)="updateSearch()"                                [color]="caseSensitive? \'lightgrey\' : \'rgba(0, 0, 0, .04)\'">                                <span>Case Sensitive</span>                            </igx-chip>                            <igx-chip (click)="updateExactSearch()"                                [color]="exactMatch? \'lightgrey\' : \'rgba(0, 0, 0, .04)\'">                                <span>Exact Match</span>                            </igx-chip>                        </igx-chips-area>                    </div>                    <div class="searchButtons">                        <button igxButton="icon" igxRipple [igxRippleCentered]="true"                            (click)="grid.findPrev(searchText, caseSensitive, exactMatch)">                            <igx-icon family="material">navigate_before</igx-icon>                        </button>                        <button igxButton="icon" igxRipple [igxRippleCentered]="true"                            (click)="grid.findNext(searchText, caseSensitive, exactMatch)">                            <igx-icon family="material">navigate_next</igx-icon>                        </button>                    </div>                </igx-suffix>            </igx-input-group>            <igx-grid igxPreventDocumentScroll #grid1 id="grid1" [data]="usersTable" [primaryKey]="\'id\'" width="100%"                height="auto" [rowEditable]="true" [allowFiltering]="true" (rowAdded)="rowAdded($event)"                (rowDeleted)="rowDeleted($event)" >                <!-- (rowEditDone)="rowEditDone($event)"> -->                <igx-paginator [perPage]="10"></igx-paginator>                <igx-column field="id" header="User ID"></igx-column>                <igx-column field="name" header="Name" [dataType]="\'string\'"></igx-column>                <igx-column field="jobTitle" header="Job Title" [dataType]="\'string\'"></igx-column>                <igx-column field="email" header="Email" [dataType]="\'string\'"></igx-column>                <igx-column field="phone" header="Phone" [dataType]="\'string\'">                    <!--The following template can be omitted (grid handles this internally) but it is here as an example of custom cell editor.-->                    <ng-template igxCellEditor let-cell="cell">                        <igx-input-group>                            <input igxInput [igxFocus]=\'true\' name="units" [(ngModel)]="cell.editValue"                                style="color: black" />                        </igx-input-group>                    </ng-template>                </igx-column>                <igx-column field="createdAt" header="Created Date" [dataType]="\'date\'"></igx-column>                <!-- <igx-column field="Discontinued" header="Discontinued" [dataType]="\'boolean\'"></igx-column> -->                <igx-action-strip #actionstrip>                    <igx-grid-editing-actions [editRow]="true" [addRow]="true" [deleteRow]="true">                    </igx-grid-editing-actions>                </igx-action-strip>            </igx-grid>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div>    <div class="card-table">        <div class="sample-wrapper">            <igx-input-group type="search" class="offset">                <igx-prefix>                    <igx-icon *ngIf="searchText.length === 0">search</igx-icon>                    <igx-icon *ngIf="searchText.length > 0" (click)="clearSearch()">clear</igx-icon>                </igx-prefix>                <input #search1 id="search1" igxInput placeholder="Search" [(ngModel)]="searchText"                    (ngModelChange)="grid.findNext(searchText, caseSensitive, exactMatch)"/>                <igx-suffix *ngIf="searchText.length > 0">                    <div class="resultsText" *ngIf="grid.lastSearchInfo">                        <span *ngIf="grid.lastSearchInfo.matchInfoCache.length > 0">                            {{ grid.lastSearchInfo.activeMatchIndex + 1 }} of {{                            grid.lastSearchInfo.matchInfoCache.length }}                            results                        </span>                        <span *ngIf="grid.lastSearchInfo.matchInfoCache.length === 0">                            No results                        </span>                    </div>                    <div class="chips">                        <igx-chips-area>                            <igx-chip (click)="updateSearch()"                                [color]="caseSensitive? \'lightgrey\' : \'rgba(0, 0, 0, .04)\'">                                <span>Case Sensitive</span>                            </igx-chip>                            <igx-chip (click)="updateExactSearch()"                                [color]="exactMatch? \'lightgrey\' : \'rgba(0, 0, 0, .04)\'">                                <span>Exact Match</span>                            </igx-chip>                        </igx-chips-area>                    </div>                    <div class="searchButtons">                        <button igxButton="icon" igxRipple [igxRippleCentered]="true"                            (click)="grid.findPrev(searchText, caseSensitive, exactMatch)">                            <igx-icon family="material">navigate_before</igx-icon>                        </button>                        <button igxButton="icon" igxRipple [igxRippleCentered]="true"                            (click)="grid.findNext(searchText, caseSensitive, exactMatch)">                            <igx-icon family="material">navigate_next</igx-icon>                        </button>                    </div>                </igx-suffix>            </igx-input-group>            <igx-grid igxPreventDocumentScroll #grid1 id="grid1" [data]="usersTable" [primaryKey]="\'id\'" width="100%"                height="auto" [rowEditable]="true" [allowFiltering]="true" (rowAdded)="rowAdded($event)"                (rowDeleted)="rowDeleted($event)" (rowEditDone)="rowEditDone($event)">                <igx-paginator [perPage]="10"></igx-paginator>                <igx-column field="id" header="User ID"></igx-column>                <igx-column field="name" header="Name" [dataType]="\'string\'"></igx-column>                <igx-column field="jobTitle" header="Job Title" [dataType]="\'string\'"></igx-column>                <igx-column field="email" header="Email" [dataType]="\'string\'"></igx-column>                <igx-column field="phone" header="Phone" [dataType]="\'string\'">                    <!--The following template can be omitted (grid handles this internally) but it is here as an example of custom cell editor.-->                    <ng-template igxCellEditor let-cell="cell">                        <igx-input-group>                            <input igxInput [igxFocus]=\'true\' name="units" [(ngModel)]="cell.editValue"                                style="color: black" />                        </igx-input-group>                    </ng-template>                </igx-column>                <igx-column field="createdAt" header="Created Date" [dataType]="\'date\'"></igx-column>                <igx-action-strip #actionstrip>                    <igx-grid-editing-actions [editRow]="true" [addRow]="true" [deleteRow]="true">                    </igx-grid-editing-actions>                </igx-action-strip>            </igx-grid>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'GridTableComponent', 'selector': 'app-grid-table'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavComponent', 'selector': 'app-nav'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'GridTableComponent'};

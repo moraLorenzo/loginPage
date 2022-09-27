@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Setup the providedIn</p>
+
+            </p>
 
 
 
@@ -99,6 +106,10 @@
                             <li>
                                 <a href="#processData" >processData</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#putUsers" >putUsers</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -122,7 +133,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/data.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/data.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -136,6 +147,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -150,6 +162,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>inject the HTTPClient Dependency</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -187,8 +203,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/services/data.service.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/services/data.service.ts:70</a></div>
                 </td>
             </tr>
 
@@ -205,6 +221,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -219,6 +236,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>contains the whole row information once an attempt to add row is detected</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -230,7 +251,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>the whole row information</p>
+
                     </div>
                 </td>
             </tr>
@@ -258,8 +280,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/services/data.service.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/app/services/data.service.ts:90</a></div>
                 </td>
             </tr>
 
@@ -276,6 +298,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -290,6 +313,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>the ID of the row that is about to be deleted</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -301,7 +328,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>the whole row information</p>
+
                     </div>
                 </td>
             </tr>
@@ -327,8 +355,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/services/data.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/services/data.service.ts:52</a></div>
                 </td>
             </tr>
 
@@ -336,8 +364,14 @@
             <tr>
                 <td class="col-md-4">
 
+                    <div>
+                    </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/Employee.html" target="_self" >Observable&lt;Employee[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>returns all the employee information from the database</p>
 
                     </div>
                 </td>
@@ -364,8 +398,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/services/data.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/services/data.service.ts:44</a></div>
                 </td>
             </tr>
 
@@ -373,8 +407,14 @@
             <tr>
                 <td class="col-md-4">
 
+                    <div>
+                    </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/Product.html" target="_self" >Observable&lt;Product[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>all the data from the products table</p>
 
                     </div>
                 </td>
@@ -403,8 +443,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/services/data.service.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/services/data.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -412,8 +452,14 @@
             <tr>
                 <td class="col-md-4">
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../interfaces/UserTable.html" target="_self" >Observable&lt;UserTable[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>returns all the user information from the database</p>
 
                     </div>
                 </td>
@@ -440,8 +486,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/services/data.service.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/services/data.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -458,6 +504,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -472,6 +519,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>this dual function method can accept endPoint in format of endpoint OR endpoint/{id}</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -479,11 +530,105 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/Account.html" target="_self" >Observable&lt;Account[]&gt;</a></code>
 
                     </div>
                     <div class="io-description">
+                        <p>the retrieved data</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="putUsers"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>putUsers</b></span>
+                        <a href="#putUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>putUsers(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, userData: <a href="../interfaces/UserTable.html" target="_self">UserTable[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/services/data.service.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
                         
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>the ID of the row from the Database</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>userData</td>
+                                    <td>
+                                                <code><a href="../interfaces/UserTable.html" target="_self" >UserTable[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>contains the new data with the old datas that haven&#39;t been changed</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/UserTable.html" target="_self" >Observable&lt;UserTable[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>the new row data</p>
+
                     </div>
                 </td>
             </tr>
@@ -498,69 +643,95 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
-import { lastValueFrom, Observable } from &#x27;rxjs&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
 import { Account } from &#x27;../interfaces&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
 import { Product } from &#x27;../interfaces/products&#x27;;
 
-import { PageSettingsModel,EditSettingsModel, DataStateChangeEventArgs, DataSourceChangedEventArgs } from &#x27;@syncfusion/ej2-angular-grids&#x27;;
 import { UserTable } from &#x27;../interfaces/users&#x27;;
 import { Employee } from &#x27;../interfaces/employee&#x27;;
 
-
+/**
+ * Setup the providedIn
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+
+
 export class DataService {
 
 
-
+  /**
+   * 
+   * @param http inject the HTTPClient Dependency
+   */
   constructor(private http: HttpClient) {
   }
 
-  processData(endPoint:string){
-    const categories &#x3D;  this.http.get&lt;Account[]&gt;(environment.baseURL + endPoint);
-    return categories;
+  /**
+   * 
+   * @param endPoint this dual function method can accept endPoint in format of endpoint OR endpoint/{id}
+   * @returns the retrieved data
+   */
+  processData(endPoint:string): Observable&lt;Account[]&gt;{
+    return this.http.get&lt;Account[]&gt;(environment.baseURL + endPoint);
   }
 
-  getProduct(){
-    const categories &#x3D;  this.http.get&lt;Product[]&gt;(environment.baseURL + &#x27;products&#x27;);
-    return categories;
+
+  /**
+   * 
+   * @returns all the data from the products table
+   */
+  getProduct():Observable&lt;Product[]&gt;{
+    return this.http.get&lt;Product[]&gt;(environment.baseURL + &#x27;products&#x27;);
   }
 
-  getEmployee(){
-    const categories &#x3D;  this.http.get&lt;Employee[]&gt;(environment.baseURL + &#x27;employment_statistics&#x27;);
-    return categories;
+  /**
+   * 
+   * @returns returns all the employee information from the database
+   */
+  getEmployee():Observable&lt;Employee[]&gt;{
+    return this.http.get&lt;Employee[]&gt;(environment.baseURL + &#x27;employees&#x27;);
   }
 
+  /**
+   * 
+   * @returns returns all the user information from the database
+   */
   public  getUsers(): Observable&lt;UserTable[]&gt;{
-    return this.http.get&lt;UserTable[]&gt;(environment.tagURL + &#x27;getDataTable&#x27; );
+    return this.http.get&lt;UserTable[]&gt;(environment.baseURL + &#x27;getDataTable&#x27; );
 
   }
 
+  /**
+   * 
+   * @param userData contains the whole row information once an attempt to add row is detected
+   * @returns the whole row information
+   */
   public addUsers(userData: UserTable[]): Observable&lt;UserTable[]&gt;{
-    return this.http.post&lt;UserTable[]&gt;(environment.tagURL + &#x27;getDataTable&#x27;, userData)
+    return this.http.post&lt;UserTable[]&gt;(environment.baseURL + &#x27;getDataTable&#x27;, userData)
   }
 
-  //   public putUsers(id: number, userData: UserTable[]): Observable&lt;UserTable[]&gt;{
-  //   return this.http.put&lt;UserTable[]&gt;(&#x60;${environment.tagURL}/getDataTable/${id}&#x60;, userData)
 
-  // }
+  /**
+   * 
+   * @param id the ID of the row from the Database
+   * @param userData contains the new data with the old datas that haven&#x27;t been changed
+   * @returns the new row data
+   */
+    public putUsers(id: number, userData: UserTable[]): Observable&lt;UserTable[]&gt;{
+    return this.http.put&lt;UserTable[]&gt;(&#x60;${environment.baseURL}getDataTable/${id}&#x60;, userData)
+  }
 
+  /**
+   * 
+   * @param id the ID of the row that is about to be deleted
+   * @returns the whole row information
+   */
   public deleteUsers(id: number): Observable&lt;UserTable[]&gt;{
-    return this.http.delete&lt;UserTable[]&gt;(&#x60;${environment.tagURL}/getDataTable/${id}&#x60;)
+    return this.http.delete&lt;UserTable[]&gt;(&#x60;${environment.baseURL}getDataTable/${id}&#x60;)
   }
-
-
-  // getData(endPoint:string){
-  //   return this.http.get&lt;Account[]&gt;(this.baseURL + endPoint);
-  // }
-
-  // public  get(endpoint: string){
-  //   return this.http.get&lt;Account[]&gt;(this.baseURL + endpoint);
-
-  // }
-
 }
 </code></pre>
     </div>

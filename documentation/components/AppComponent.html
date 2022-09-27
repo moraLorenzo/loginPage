@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Setup the decorator and set selector templateURl and styleURLs</p>
+
+    </p>
 
 
 
@@ -178,10 +185,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/app.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/app.component.ts:19</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set title property as &#39;loginPage&#39;</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -193,12 +206,22 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 
+/**
+ * Setup the decorator and set selector templateURl and styleURLs
+ */
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
   styleUrls: [&#x27;./app.component.scss&#x27;]
 })
+
+/**
+ * Initialize Component
+ */
 export class AppComponent {
+  /**
+   * Set title property as &#x27;loginPage&#x27;
+   */
   title &#x3D; &#x27;loginPage&#x27;;
 }
 </code></pre>
@@ -215,7 +238,9 @@ export class AppComponent {
                 <p class="comment">
                     <code>./app.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.content{
+    background-color: transparent;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">

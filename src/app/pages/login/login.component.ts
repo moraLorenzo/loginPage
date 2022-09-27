@@ -9,6 +9,9 @@ import { firstValueFrom } from 'rxjs';
 
 import * as _ from 'lodash';
 
+/**
+ * Setup the decorator and set selector templateURl and styleURLs
+ */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,41 +19,62 @@ import * as _ from 'lodash';
 })
 export class LoginComponent implements OnInit {
 
+  /**
+   * Prepare Form Group
+   */
   loginForm!: FormGroup;
 
+  /**
+   * Initialize Account object
+   */
   accounts: Account[] = [];
+
+  /**
+   * Initialize message object
+   */
   msgs: Message[] = [];
 
+  /**
+   * Prepare Filtered Array Variable
+   */
   filtered_array: Account[] = [];
 
+  /**
+   * 
+   * @param _ds Data Service Injection
+   * @param _fb Formbuilder Injection
+   * @param _rt Router Injection
+   */
   constructor(private _ds: DataService, private _fb: FormBuilder, private _rt: Router) { }
 
+  /**
+   * Initialize the login form and call the get accounts method
+   */
   async ngOnInit(): Promise<void> {
-
-    //Initialize the formgroup
     this.loginForm = this._fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]]
     })
-
-    //receive the Accounts data for reference from MockAPI
     await this.getAccounts();
-
-
   }
 
+  /**
+   * Retrieve all accounts
+   */
   public async getAccounts() {
     await firstValueFrom(this._ds.processData('accounts'))?.then(res => {
       this.accounts = res;
     });
   }
 
+  /**
+   * @ignore
+   * Check if entered email and password matches an account row
+   */
   submit() {
     try {
       const { email, password } = this.loginForm.value;
       this.filtered_array = _.filter(this.accounts, {"email": email, "password": password});
-
-        console.log(this.filtered_array);
 
       if (_.isArray(this.filtered_array) && _.size(this.filtered_array)) {
        
@@ -69,6 +93,9 @@ export class LoginComponent implements OnInit {
 
   }
 
+  /**
+   * Sample Comment
+   */
   addMessages() {
     this.msgs = [
       { severity: 'success', summary: 'Success', detail: 'Successfully Logged In!' },
