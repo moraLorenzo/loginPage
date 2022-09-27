@@ -14,11 +14,11 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent],
-      imports: [HttpClientModule,RouterTestingModule],
+      declarations: [HomeComponent],
+      imports: [HttpClientModule, RouterTestingModule],
       providers: [DataService]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
@@ -29,7 +29,7 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Get All Accounts',()=>{
+  it('Get All Accounts', () => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
 
@@ -61,19 +61,10 @@ describe('HomeComponent', () => {
       "id": "3"
     },];
 
-    let retVal : Account[] = [{
-      "createdAt": "2022-09-11T08:44:28.995Z",
-      "name": "Esther Buckridge",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
-      "password": "RYQajunckDxKvnF",
-      "email": "Efrain_Lang@gmail.com",
-      "id": "1"
-    }];
-
     spyOn(service, 'processData').and.returnValue(of(accounts));
     component.getAccounts(1);
 
-    component.filtered_array =  [{
+    component.filtered_array = [{
       "createdAt": "2022-09-11T08:44:28.995Z",
       "name": "Esther Buckridge",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
@@ -83,16 +74,8 @@ describe('HomeComponent', () => {
     }];
 
     component.name = "Esther Buckridge";
-    component.avatar = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg";
 
     expect(component.name).toBe(component.filtered_array[0].name);
-    expect(component.avatar).toBe(component.filtered_array[0].avatar);
   });
-
-  // it('the submit function does not succeed', () => {   
-  //   component.getAccounts(1);
-
-  //   expect(component.filtered_array.length).toBe(0);
-  // });
 
 });
