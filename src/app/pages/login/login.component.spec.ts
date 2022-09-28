@@ -6,7 +6,7 @@ import { DataService } from '../../services/data.service';
 
 import { LoginComponent } from './login.component';
 import { Account } from '../../interfaces/index';
-import {of} from 'rxjs';
+import { of } from 'rxjs';
 import { DotNetCodeGeneratingComponentRendererDataEmitter, IRenderer_$type } from 'igniteui-angular-core';
 import { Router } from '@angular/router';
 
@@ -16,24 +16,24 @@ describe('LoginComponent', () => {
   let router: Router;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
+      declarations: [LoginComponent],
       imports: [HttpClientModule, ReactiveFormsModule],
       providers: [DataService]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     router = TestBed.get(Router);
   });
-  
+
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Get All Accounts',()=>{
+  it("should assign 'accounts' property to be the return value of HTTP get request", () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
 
@@ -59,13 +59,12 @@ describe('LoginComponent', () => {
 
     spyOn(service, 'processData').and.returnValue(of(accounts));
     component.getAccounts();
-    
+
     component.accounts = accounts;
     expect(component.accounts).toEqual(accounts);
   });
 
-  //Should cover the submit button
-  it("should submit the form and check the inputs", ()=>{
+  it("should call submit function and return a single object", () => {
 
     component.loginForm.controls['email'].setValue("Efrain_Lang@gmail.com");
     component.loginForm.controls['password'].setValue("12345678");
@@ -97,7 +96,7 @@ describe('LoginComponent', () => {
 
     component.accounts = accounts;
 
-    const filtered_array : Account[] = [ {
+    const filtered_array: Account[] = [{
       "createdAt": "2022-09-11T08:44:28.995Z",
       "name": "Esther Buckridge",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/370.jpg",
@@ -105,8 +104,8 @@ describe('LoginComponent', () => {
       "email": "Efrain_Lang@gmail.com",
       "id": "1"
     },
-  ];
-  
+    ];
+
     spyOn(component, 'submit').and.callThrough();
     const navSpy = spyOn(router, "navigate");
     component.submit();
@@ -115,11 +114,11 @@ describe('LoginComponent', () => {
 
     expect(component.filtered_array).toEqual(filtered_array);
     expect(component.filtered_array.length).toBeGreaterThan(0);
-    expect(navSpy).toHaveBeenCalledWith(['nav/home/'+ filtered_array[0].id]);
+    expect(navSpy).toHaveBeenCalledWith(['nav/home/' + filtered_array[0].id]);
   });
 
 
-  it('the submit function does not succeed', () => {   
+  it('should fail the if condition', () => {
     component.submit();
 
     expect(component.filtered_array.length).toBe(0);

@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
    * 
    * @param _ds Inject Dataservice
    * @param route Inject ActivatedRoute to determine the URL params
+   * Inject all dependencies
    */
   constructor(private _ds: DataService, private route: ActivatedRoute) { 
 
@@ -53,19 +54,15 @@ export class HomeComponent implements OnInit {
     await this.getAccounts(id);
   }
 
-
   /**
    * 
-   * @param id pass ID as URL parameter to find specifically
+   * @param id sample ID
+   * Set account variable as entries of the res JSON data
    */
   public async getAccounts(id: number) {
 
     await firstValueFrom(this._ds.processData('accounts/'+ id))?.then((res:Account[]) => {
       this.filtered_array = res;
-
-      /**
-       * Set account variable as entries of the res JSON data
-       */
       let account = Object.entries(res);
       this.name = account[2][1].toString();
     });

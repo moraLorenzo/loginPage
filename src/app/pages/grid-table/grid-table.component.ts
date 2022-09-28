@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { firstValueFrom} from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 
@@ -48,6 +48,7 @@ export class GridTableComponent implements OnInit {
   /**
    * 
    * @param _ds Inject Dataservice
+   * Initialize the service
    */
   constructor(private _ds: DataService) { }
 
@@ -68,6 +69,7 @@ export class GridTableComponent implements OnInit {
   /**
    * 
    * @param event whole row data
+   * It will get the whole data row and can be access thru event.data
    */
   async rowAdded(event: IRowDataEventArgs): Promise<void> {
    await firstValueFrom(this._ds.addUsers(event.data)).then((_res: UserTable[]) => console.log, console.error);
@@ -97,6 +99,7 @@ export class GridTableComponent implements OnInit {
    /**
     * 
     * @param event whole row data
+    * It will require ID parameter which can be accessed thru event.data.id
     */
   async rowDeleted(event: IRowDataEventArgs): Promise<void> {
     await firstValueFrom(this._ds.deleteUsers(event.data.id)).then((_res: UserTable[]) => console.log, console.error);
@@ -105,6 +108,7 @@ export class GridTableComponent implements OnInit {
   /**
    * 
    * @param event whole row data
+   * It will require 2 parameters rowID and newValue which can be accessed thru event.rowID and event.newValue
    */
   async rowEditDone(event: IGridEditDoneEventArgs): Promise<void> {
     await firstValueFrom(this._ds.putUsers(event.rowID, event.newValue)).then((_res: UserTable[]) => this.getData(), console.error);

@@ -200,6 +200,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Inject all dependencies</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -240,7 +242,8 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <p>Inject ActivatedRoute to determine the URL params</p>
+                                                                <p>Inject ActivatedRoute to determine the URL params
+Inject all dependencies</p>
 
                                                         </td>
                                                 </tr>
@@ -285,14 +288,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/pages/home/home.component.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/pages/home/home.component.ts:62</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Set account variable as entries of the res JSON data</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -319,7 +324,8 @@
 
 
                                     <td>
-                                        <p>pass ID as URL parameter to find specifically</p>
+                                        <p>sample ID
+Set account variable as entries of the res JSON data</p>
 
                                     </td>
                                 </tr>
@@ -361,8 +367,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/pages/home/home.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/pages/home/home.component.ts:45</a></div>
                 </td>
             </tr>
 
@@ -501,6 +507,7 @@ export class HomeComponent implements OnInit {
    * 
    * @param _ds Inject Dataservice
    * @param route Inject ActivatedRoute to determine the URL params
+   * Inject all dependencies
    */
   constructor(private _ds: DataService, private route: ActivatedRoute) { 
 
@@ -521,19 +528,15 @@ export class HomeComponent implements OnInit {
     await this.getAccounts(id);
   }
 
-
   /**
    * 
-   * @param id pass ID as URL parameter to find specifically
+   * @param id sample ID
+   * Set account variable as entries of the res JSON data
    */
   public async getAccounts(id: number) {
 
     await firstValueFrom(this._ds.processData(&#x27;accounts/&#x27;+ id))?.then((res:Account[]) &#x3D;&gt; {
       this.filtered_array &#x3D; res;
-
-      /**
-       * Set account variable as entries of the res JSON data
-       */
       let account &#x3D; Object.entries(res);
       this.name &#x3D; account[2][1].toString();
     });

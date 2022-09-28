@@ -26,7 +26,7 @@ describe('DataService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should have return data from API', () => {
+  it('should return data of Account type and ', () => {
     const accounts: Account[] = [{
       "createdAt": "2022-09-11T08:44:28.995Z",
       "name": "Esther Buckridge",
@@ -45,16 +45,14 @@ describe('DataService', () => {
     }];
 
     service.processData('accounts').subscribe(accounts_get => {
-      expect(accounts_get.length).toBe(2);
+      expect(accounts_get.length).toBeGreaterThan(0);
       expect(accounts_get).toEqual(accounts);
-
-
     });
 
     const request = controller.expectOne(`${environment.baseURL}accounts`);
-
     expect(request.request.method).toBe('GET');
 
+    request.flush(accounts);
   });
 
 
@@ -128,15 +126,15 @@ describe('DataService', () => {
     controller.verify();
   });
 
-  it('sample delete user testing', ()=>{
+  it('sample delete user testing', () => {
     let user_id = 1;
-    service.deleteUsers(user_id).subscribe((data:any) => {
+    service.deleteUsers(user_id).subscribe((data: any) => {
       expect(data).toBe(user_id);
     });
 
     const req = controller.expectOne({
       method: 'DELETE',
-      url:`${environment.baseURL}getDataTable/${user_id}`,
+      url: `${environment.baseURL}getDataTable/${user_id}`,
     });
 
     req.flush(user_id);
@@ -144,7 +142,7 @@ describe('DataService', () => {
     controller.verify();
   });
 
-  it('sample update user testing', ()=>{
+  it('sample update user testing', () => {
     const accountEntry: UserTable[] = [{
       "createdAt": "2022-09-14T18:11:32.595Z",
       "name": "Jonathan NewBie",
@@ -163,7 +161,7 @@ describe('DataService', () => {
 
     const req = controller.expectOne({
       method: 'PUT',
-      url:`${environment.baseURL}getDataTable/${user_id}`,
+      url: `${environment.baseURL}getDataTable/${user_id}`,
     });
 
     req.flush(accountEntry);

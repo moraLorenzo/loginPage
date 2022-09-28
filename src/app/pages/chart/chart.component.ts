@@ -37,6 +37,7 @@ export class ChartComponent implements OnInit {
   /**
    * 
    * @param _ds Inject Dataservice
+   * Initialize the dependecies
    */
   constructor( private _ds: DataService) { }
 

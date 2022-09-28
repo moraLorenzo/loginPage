@@ -29,7 +29,7 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Get All Accounts', () => {
+  it('should get all accounts and find by ID to assign the value of name to name property', () => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
 

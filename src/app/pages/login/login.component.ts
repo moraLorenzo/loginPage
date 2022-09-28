@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
    * @param _ds Data Service Injection
    * @param _fb Formbuilder Injection
    * @param _rt Router Injection
+   * Initialize the dependencies
    */
   constructor(private _ds: DataService, private _fb: FormBuilder, private _rt: Router) { }
 
